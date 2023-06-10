@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/survey-jquery@1.9.91/survey.jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/survey-jquery@1.9.91/defaultV2.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href ="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" />
+    <link rel="stylesheet" href ="./css/styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--
+        <script src="./js/bootstrap.bundle.js" crossorigin="anonymous"></script>
+        <script src="./js/jquery-3.7.0.min.js" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        -->
+    <title>O23 Umfrage</title>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <i class="flag flag-de"></i><a data-bs-toggle="modal" href="#german" class="btn btn-lg btn-block flag flag-de"> Deutsch</a>
+        <i class="flag flag-en"></i><a data-bs-toggle="modal" href="#english" class="btn btn-lg btn-block flag flag-us"> English</a>
+    </div>
+
+</div>
+
+<div class="position-absolute top-50 start-50 translate-middle">
+<div class="modal" id="german" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">O23 Umfrage</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="modal-body">
+                <div id="surveyElement_de"></div>
+                <script src="./js/json_de.js"></script>
+                <script src="./js/o23_umfrage_de.js"></script>
+            </div>
+            <!--
+            <div class="modal-footer">
+                <a href="#" data-bs-dismiss="modal" class="btn btn-outline-dark">Close</a>
+            </div>
+            -->
+        </div>
+    </div>
+</div>
+</div>
+<div class="position-absolute top-50 start-50 translate-middle">
+
+<div class="modal" id="english" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">O23 Survey</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="modal-body">
+                <div id="surveyElement_en"></div>
+                <script src="./js/json_en.js"></script>
+                <script src="./js/o23_survey_en.js"></script>
+            </div>
+            <!--
+            <div class="modal-footer">
+                <a href="#" data-bs-dismiss="modal" class="btn btn-outline-dark">Close</a>
+            </div>
+            -->
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>

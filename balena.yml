@@ -1,7 +1,6 @@
-name: balenaDash
+name: balenaSurvey
 description: >-
-  Raspberry Pi-powered digital signage or website viewer, remotely
-  accessible from anywhere.
+  Raspberry Pi-powered digital signage website viewer with surveyjs survey
 type: sw.application
 post-provisioning: >-
   At the most basic level, this project allows you to display
@@ -32,7 +31,7 @@ assets:
   repository:
     type: blob.asset
     data:
-      url: 'https://github.com/balena-labs-projects/balena-dash'
+      url: 'https://github.com/DerMelchior/balena-surveyjs'
   logo:
     type: blob.asset
     data:
@@ -45,13 +44,13 @@ data:
   applicationEnvironmentVariables:
     - SHOW_CURSOR: 0
     - CONTROL_TV: 0
-    - ENABLE_GPU: 0
+    - ENABLE_GPU: 1
     - KIOSK: 1
-    - PERSISTENT: 1
-    - PORTAL_SSID: balenaDash
-    - PORTAL_PASSPHRASE: balenaDash
+    - PERSISTENT: 0
+    - PORTAL_SSID: ostraleDash
+    - PORTAL_PASSPHRASE: 100%ostrale
     - ACTIVITY_TIMEOUT: 600
-    - LAUNCH_URL: ''
+    - LAUNCH_URL: 'https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/'
     - ROTATE_DISPLAY: normal
     - WINDOW_POSITION: '0,0'
     - LOCAL_HTTP_DELAY: 0
@@ -65,4 +64,4 @@ data:
     - intel-nuc
     - genericx86-64-ext
     - raspberrypi400-64
-version: 2.0.6
+version: 2.0.7

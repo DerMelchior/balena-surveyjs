@@ -16,7 +16,7 @@ services:
     privileged: true
   wifi-connect:
     build: ./wifi-connect
-    restart: always
+    restart: never
     network_mode: host
     privileged: true
     labels:
@@ -31,4 +31,11 @@ services:
     restart: always
     privileged: true
     ports:
-      - 8080:80
+      - 8080:8080
+  lighttpd:
+    build: ./lighttpd
+    restart: always
+    privileged: true
+    ports:
+      - 80:80
+      - 443:443

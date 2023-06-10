@@ -1,0 +1,23 @@
+div.running-survey-header{
+    display: none !important;
+}
+
+
+body.v2-class---run-page > div > div.running-survey-header {
+    display: none !important;
+}
+
+.modal:nth-of-type(even) {
+    z-index: 1062 !important;
+}
+.modal-backdrop.show:nth-of-type(even) {
+    z-index: 1061 !important;
+}
+
+
+img.sd-imagepicker__image {
+    max-width: 128px;
+    max-height: 128px;
+    border-color: #1d2124;
+    border-radius: 5px;
+}
