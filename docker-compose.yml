@@ -16,7 +16,7 @@ services:
     privileged: true
   wifi-connect:
     build: ./wifi-connect
-    restart: never
+    restart: always
     network_mode: host
     privileged: true
     labels:
