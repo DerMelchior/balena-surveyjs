@@ -1,3 +1,0 @@
-FROM rtsp/docker-lighttpd
-
-

@@ -31,7 +31,7 @@ assets:
   repository:
     type: blob.asset
     data:
-      url: 'https://github.com/DerMelchior/balena-surveyjs'
+      url: 'https://github.com/DerMelchior/balena-surveyjs.git'
   logo:
     type: blob.asset
     data:
@@ -50,7 +50,7 @@ data:
     - PORTAL_SSID: ostraleDash
     - PORTAL_PASSPHRASE: 100%ostrale
     - ACTIVITY_TIMEOUT: 600
-    - LAUNCH_URL: 'https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/'
+    - LAUNCH_URL: 'https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com'
     - ROTATE_DISPLAY: normal
     - WINDOW_POSITION: '0,0'
     - LOCAL_HTTP_DELAY: 0

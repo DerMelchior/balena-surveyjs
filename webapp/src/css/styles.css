@@ -1,8 +1,0 @@
-div.running-survey-header{
-    display: none !important;
-}
-
-
-body.v2-class---run-page > div > div.running-survey-header {
-    display: none !important;
-}
