@@ -12,7 +12,7 @@ RUN set -x \
     lighttpd${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
     lighttpd-mod_auth${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
     && rm -rvf /var/cache/apk/* \
-    && rm -rvf /etc/lighttpd/* /etc/logrotate.d/lighttpd /var/log/lighttpd /var/www/localhost \
+    && rm -rvf /etc/lighttpd/* /etc/logrotate.d/lighttpd /var/log/lighttpd /var/www/localhost /var/www/html \
     && mkdir -vp /var/www/html
 
 COPY files/lighttpd/ /etc/lighttpd/
