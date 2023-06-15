@@ -1,9 +1,17 @@
 .active:active {
-  /*outline-color: red !important; */
+  outline-color: red !important; 
+  outline-style: solid;
+  outline-width: 2px;
 }
 .focus:focus {
-/*  outline-color: red !important; */
+  outline-color: red !important; 
+  outline-style: solid;
+  outline-width: 2px;
 }
+
+.btn:active, .btn:focus {
+    border: solid 1px #cddbf1;
+  }
 
 .modal:nth-of-type(even) {
     z-index: 1062 !important;
