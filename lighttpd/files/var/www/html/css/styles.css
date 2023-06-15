@@ -9,12 +9,24 @@
   outline-width: 2px;
 }
 
-.btn:active, .btn:focus {
+.btn:active {
     border: solid 2px red;
   }
 
-  .sd-imagepicker__image:active, .sd-imagepicker__image:focus {
+.btn:focus {
     border: solid 2px red;
+  }
+
+  .sd-imagepicker__image:active {
+    border: solid 4px red;
+  }
+
+  .sd-imagepicker__image:focus {
+    border: solid 4px red;
+  }
+
+  .sd-imagepicker__image:active, .sd-imagepicker__image:focus {
+    border: solid 4px red;
   }
 
 .modal:nth-of-type(even) {
