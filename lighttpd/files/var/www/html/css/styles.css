@@ -10,7 +10,11 @@
 }
 
 .btn:active, .btn:focus {
-    border: solid 1px #cddbf1;
+    border: solid 2px red;
+  }
+
+  .sd-imagepicker__image:active, .sd-imagepicker__image:focus {
+
   }
 
 .modal:nth-of-type(even) {
