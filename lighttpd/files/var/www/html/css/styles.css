@@ -14,7 +14,7 @@
   }
 
   .sd-imagepicker__image:active, .sd-imagepicker__image:focus {
-
+    border: solid 2px red;
   }
 
 .modal:nth-of-type(even) {
