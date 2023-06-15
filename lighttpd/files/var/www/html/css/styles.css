@@ -54,7 +54,7 @@
     background-blend-mode: overlay;
     background-color: transparent;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 
 .flag-en {
@@ -62,16 +62,17 @@
     background-blend-mode: overlay;
     background-color: transparent;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 
 div.float-container {
-/*    border: 3px solid #000;
-    padding: 20px; */
+   /* border: 3px solid #000;*/
+    padding: 20px; 
 }
 
 div.float-child {
- /*   width: 50%;
+  padding: 20px;
+  /*   width: 50%;
     float: left;
     padding: 20px;
     border: 2px solid red;*/
