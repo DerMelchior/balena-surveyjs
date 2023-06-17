@@ -336,8 +336,8 @@ width: 50%;
   background-color: unset;
 }
 .img-fluid {
-  border:1px solid darkgrey;
-  padding: 5px;
+  /* border:1px solid darkgrey; */
+  /* padding: 5px; */
 }
 
 #carouselId .carousel-item img {
