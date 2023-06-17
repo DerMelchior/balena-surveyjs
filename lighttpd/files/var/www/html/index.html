@@ -6,31 +6,32 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <!-- Bootstrap CSS -->
-    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/survey-jquery@1.9.91/survey.jquery.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/survey-jquery@1.9.91/defaultV2.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-    <link rel="stylesheet" href ="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/survey.jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/defaultV2.min.css" />
+    <link rel="stylesheet" href="./css/normalize.min.css" />
+    <link rel="stylesheet" href ="./css/bootstrap.min.css" />
     <!-- Apply the Bootstrap theme -->
-    <script src="https://unpkg.com/survey-core/plugins/bootstrap-integration.min.js"></script>
+    <script src="./js/bootstrap-integration.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" />
-    <link rel="stylesheet" href ="../css/styles.css" />
-    <link rel="icon" type="image/vnd.icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="./css/flag-icon.min.css" />
+    <link rel="stylesheet" href ="./css/styles.css" />
+    <link rel="icon" type="image/vnd.icon" href="./images/favicon.ico" />
     
     <title>Ostrale O23 Umfrage</title>
 </head>
 <body>
 <div class="container">
-    <h3 class="text-center">Wählen Sie Ihre Sprache / Choose your language</h3>
-    <div class="position-absolute top-50 start-50 translate-middle">
-        <br>
+    <div class="row">
+        <h3 class="text-center">Wählen Sie Ihre Sprache / Choose your language</h3>
+    </div>
+    <div class="row">
         <div class="float-container">
            <div class="float-child">
-              <a data-bs-toggle="modal" href="#german" class="btn btn-block flag"><img src="../images/Flag_of_Germany.svg" class="flag-de"/> Deutsch</a>
+              <a data-bs-toggle="modal" href="#german" class="btn btn-block flag"><img src="./images/Flag_of_Germany.svg" style="max-width: 350px;" class="flag-de"/> Deutsch</a>
            </div>
            <div class="float-child">
-              <a data-bs-toggle="modal" href="#english" class="btn btn-block flag"><img src="../images/Flag_of_the_United_Kingdom_(3-5).svg" class="flag-en"/> English</a>
+              <a data-bs-toggle="modal" href="#english" class="btn btn-block flag"><img src="./images/Flag_of_the_United_Kingdom_(3-5).svg" style="max-width: 350px;" class="flag-en"/> English</a>
            </div>
         </div>
     </div>
@@ -41,8 +42,8 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div id="surveyElement_de"></div>
-                <script src="../js/json_de.js"></script>
-                <script src="../js/o23_umfrage_de.js"></script>
+                <script src="./js/json_de.js"></script>
+                <script src="./js/o23_umfrage_de.js"></script>
             </div>
         </div>
     </div>
@@ -54,8 +55,8 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div id="surveyElement_en"></div>
-                <script src="../js/json_en.js"></script>
-                <script src="../js/o23_survey_en.js"></script>
+                <script src="./js/json_en.js"></script>
+                <script src="./js/o23_survey_en.js"></script>
             </div>
         </div>
     </div>
