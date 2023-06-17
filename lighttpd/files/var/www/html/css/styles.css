@@ -26,16 +26,6 @@
 /* (720x1280) Galaxy Nexus, WXGA */
 @media only screen and (min-device-width: 720px) and (max-device-width: 1280px) {
   /* insert styles here */
-}
-
-/* (720x1280) Galaxy Nexus, Landscape */
-@media only screen and (min-device-width: 720px) and (max-device-width: 1280px) and (orientation: landscape) {
-  /* insert styles here */
-}
-
-/* (1024x768) iPad 1 & 2, XGA */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* insert styles here */
   .active:active {
     outline-color: red !important; 
     outline-style: solid;
@@ -61,17 +51,7 @@
     .btn:active, .btn:focus {
       border: solid 2px red;
     }
-    .sd-imagepicker__image:active {
-      border: solid 4px red;
-    }
-  
-    .sd-imagepicker__image:focus {
-      border: solid 4px red;
-    }
-  
-    .sd-imagepicker__image:active, .sd-imagepicker__image:focus {
-      border: solid 4px red;
-    }
+
   
   .modal:nth-of-type(even) {
       z-index: 1062 !important;
@@ -80,31 +60,21 @@
       z-index: 1061 !important;
   }
   
-  .sd-imagepicker__image-container {
-      border: 2px solid black;
-      border-radius: 5px;
-  }
-  .float-container {
-      border: 3px solid #000;
-      padding: 20px; 
-  }
-  
-  .float-child {
-    padding: 20px;
-    width: 50%;
-      float: left;
-      padding: 20px;
-      border: 2px solid red;
-  }  
-  
   h3 {
       margin-top: 50px;
   }
-  
-  .sd-logo__image {
-      max-width: 120px !important;
-      max-height: 60px !important;
-  }
+ 
+}
+
+/* (720x1280) Galaxy Nexus, Landscape */
+@media only screen and (min-device-width: 720px) and (max-device-width: 1280px) and (orientation: landscape) {
+  /* insert styles here */
+}
+
+/* (1024x768) iPad 1 & 2, XGA */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* insert styles here */
+
 }
 
 /* (768x1024) iPad 1 & 2, Portrait */
@@ -160,3 +130,55 @@
 
 
 
+ /* knockoutjs modifikations here */
+
+ .sv_window_content {
+  max-height: unset !important;
+}
+
+body > div:nth-child(4) > div.sv_window {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.sd-imagepicker__image:active {
+  border: solid 2px #ea0000;
+}
+
+
+.sd-imagepicker__image:focus {
+  border: solid 2px #ea0000;
+}
+
+.sd-imagepicker__image:active, .sd-imagepicker__image:focus {
+  border: solid 2px ca0000;
+}
+.sd-imagepicker__image-container {
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+}
+.float-container {
+  border: 3px solid #000;
+  padding: 20px; 
+}
+
+.float-child {
+padding: 20px;
+width: 50%;
+  float: left;
+  padding: 20px;
+  border: 2px solid darkgrey;
+}
+.sd-logo__image {
+  max-width: 120px !important;
+  max-height: 60px !important;
+}
+
+.sd-element--with-frame > .sd-element > .sd-question > .sd-row__question {
+  /* background-image: none; */
+  /*TODO red O to background */
+
+}
+.sd-imagepicker__item img, .sd-imagepicker__item .sd-imagepicker__image-container>div {
+  background-color: unset;
+}

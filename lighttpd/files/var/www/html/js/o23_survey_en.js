@@ -1,6 +1,12 @@
-const survey_en = new Survey.Model(json_en);
-survey_en.onComplete.add((sender, options) => {
-    console.log(JSON.stringify(sender.data, null, 3));
+const survey = new Survey.Model(json);
+survey.onComplete.add((sender, options) => {
+    console.log("DATA: "+JSON.stringify(sender.data, null, 3));
 });
 
-$("#surveyElement_en").PopupSurvey({ model: survey, isExpanded: false });
+survey.supportedLocales = ["en", "de"];
+survey.locale = "en";
+survey.locales = ["de", "en"];
+survey.defaultLocale = "de";
+survey.currentLocale = "en";
+
+$("#surveyElement").Survey({ model: survey}, {locale: "de"});

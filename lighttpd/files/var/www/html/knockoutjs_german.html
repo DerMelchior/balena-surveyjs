@@ -5,19 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <script src="https://unpkg.com/knockout@3.5.1/build/output/knockout-latest.js"></script>
-    <script src="https://unpkg.com/survey-core@1.9.92/survey.core.min.js"></script>
-    <script src="https://unpkg.com/survey-core@1.9.92/survey.i18n.min.js"></script>
-    <script src="https://unpkg.com/survey-knockout-ui@1.9.92/survey-knockout-ui.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/survey-core@1.9.92/defaultV2.min.css" />
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/survey.jquery.min.js"></script>
+    <script src="./js/survey.i18n.min.js"></script>
+    <link rel="stylesheet" href="./css/defaultV2.min.css" />
     <link rel="stylesheet" href ="./css/styles.css" />
   </head>
   <body>
-    <div id="surveyElement_de" style="display: inline-block; width: 100%;">
+    <main>
+    <div id="surveyElement" style="display: inline-block; width: 100%;">
         <survey params="survey: model"></survey>
     </div>
+  <div class="custom-select">
+    <select class="custom-select__select" id="selLocales" style="width:100%" onchange="changeLocale();">
+        <option value="de" selected="">Deutsch</option>
+        <option value="en" >English</option>
+    </select>
+</div>
     
-    <script src="./js/json_de.js"></script>
-    <script src="./js/knockoutjs_o23_umfrage_de.js"></script>
+    <script src="./js/knockoutjs_json_de.js"></script>
+    <script src="./js/o23_umfrage_de.js"></script>
+<script type="js">
+  survey.locale = 'de';
+</script>
+    
+<script>
+  function changeLocale() {
+    survey.locale = document.getElementById('selLocales').value;
+      if (!!window.survey) {
+          survey.locale = document.getElementById('selLocales').value;
+        }
+    }
+    changeLocale();
+</script>
+  </main>
   </body>
 </html>
