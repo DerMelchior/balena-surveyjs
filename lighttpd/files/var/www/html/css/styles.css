@@ -213,3 +213,14 @@ width: 50%;
 .sd-imagepicker__item img, .sd-imagepicker__item .sd-imagepicker__image-container>div {
   background-color: unset;
 }
+.img-fluid {
+  border:1px solid darkgrey;
+  padding: 5px;
+}
+
+#carouselId .carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  height: 50vh;
+  overflow: hidden;
+} 

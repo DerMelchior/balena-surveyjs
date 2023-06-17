@@ -9,4 +9,4 @@ survey.locales = ["de", "en"];
 survey.defaultLocale = "de";
 survey.currentLocale = "en";
 
-$("#surveyElement").Survey({ model: survey}, {locale: "de"});
+$("#surveyElement").Survey({ model: survey}, {locale: "en"});
