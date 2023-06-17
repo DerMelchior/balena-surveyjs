@@ -6,7 +6,7 @@ survey.onComplete.add((sender, options) => {
 survey.supportedLocales = ["en", "de"];
 survey.locale = "en";
 survey.locales = ["de", "en"];
-survey.defaultLocale = "de";
+survey.defaultLocale = "en";
 survey.currentLocale = "en";
 
 $("#surveyElement").Survey({ model: survey}, {locale: "en"});

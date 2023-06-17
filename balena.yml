@@ -39,14 +39,14 @@ assets:
         https://raw.githubusercontent.com/balena-labs-projects/balena-dash/master/assets/logo.png
 data:
   applicationConfigVariables:
-    - BALENA_HOST_CONFIG_gpu_mem: 128
+    - BALENA_HOST_CONFIG_gpu_mem: 256
     - BALENA_HOST_CONFIG_dtoverlay: "vc4-fkms-v3d"
   applicationEnvironmentVariables:
     - SHOW_CURSOR: 0
     - CONTROL_TV: 0
     - ENABLE_GPU: 1
     - KIOSK: 1
-    - PERSISTENT: 0
+    - PERSISTENT: 1
     - PORTAL_SSID: ostraleDash
     - PORTAL_PASSPHRASE: 100%ostrale
     - ACTIVITY_TIMEOUT: 600
@@ -55,7 +55,7 @@ data:
     - WINDOW_POSITION: '0,0'
     - LOCAL_HTTP_DELAY: 0
     - FBCP_DISPLAY: ''
-  defaultDeviceType: raspberrypi4-64
+  defaultDeviceType: raspberrypi3-64
   supportedDeviceTypes:
     - raspberrypi4-64
     - fincm3

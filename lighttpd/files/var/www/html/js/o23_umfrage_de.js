@@ -1,5 +1,3 @@
-/* import { surveyLocalization } from 'survey-core'; */
-
 const survey = new Survey.Model(json);
 survey.onComplete.add((sender, options) => {
     console.log("DATA: "+JSON.stringify(sender.data, null, 3));
@@ -21,4 +19,4 @@ ko.applyBindings({
 /*
 $("#surveyElement_de").PopupSurvey({ model: survey_de, isExpanded: true });
 */
-$("#surveyElement").Survey({ model: survey, locale: "en" });
+$("#surveyElement").Survey({ model: survey}, {locale: "de" });
