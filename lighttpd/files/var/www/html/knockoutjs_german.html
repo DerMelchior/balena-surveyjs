@@ -6,19 +6,19 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <!-- Bootstrap CSS -->
-    <script src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/js/jquery.min.js"></script>
-    <script src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/js/survey.jquery.min.js"></script>
-    <script src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/defaultV2.min.css" />
-    <link rel="stylesheet" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/normalize.min.css" />
-    <link rel="stylesheet" href ="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/bootstrap.min.css" />
-    <link rel="stylesheet" href ="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/bootstrap-grid.min.css" />
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/survey.jquery.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/defaultV2.min.css" />
+    <link rel="stylesheet" href="./css/normalize.min.css" />
+    <link rel="stylesheet" href ="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href ="./css/bootstrap-grid.min.css" />
     <!-- Apply the Bootstrap theme -->
-    <script src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/js/bootstrap-integration.min.js"></script>
-
-    <link rel="stylesheet" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/flag-icon.min.css" />
-    <link rel="stylesheet" href ="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/styles.css" />
-    <link rel="icon" type="image/vnd.icon" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/images/favicon.ico" />
+    <script src="./js/bootstrap-integration.min.js"></script>
+    <script src="./js/scripts.js"></script>
+    <link rel="stylesheet" href="./css/flag-icon.min.css" />
+    <link rel="stylesheet" href ="./css/styles.css" />
+    <link rel="icon" type="image/vnd.icon" href="./images/favicon.ico" />
     
     <title>Ostrale O23 Umfrage</title>
 </head>
@@ -27,13 +27,13 @@
         <div class="container top">
             <div class="row">
                 <div class="col left">
-                    <img src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/images/kammer_flimmern_o23_x750_250px_96dpi_1024px.png" width="261px" height="52px" alt="kammer_flimmern_O23" class="img">
+                    <img src="./images/kammer_flimmern_1000x200.png" width="1000" height="200" alt="kammer flimmern logo" class="img">
                 </div>
                 <div class="col center text-center">
                   <h1> Ostrale Biennale O23 Umfrage </h1>  
                 </div>
                 <div class="col right">
-                    <img src = "https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/images/ostrale_logo_de_250px_96dpi_1024px.png"  loading="eager" width="261px" height="80px" class="img" alt="Ostrale Logo">
+                    <img src = "./images/ostrale_logo_905x304.png"width="905" height="304" class="img" alt="Ostrale Logo" class="img">
 			<div class="custom-select">
 			  <select class="custom-select__select" id="selLocales" onchange="changeLocale();">
 			        <option value="de" selected="">Deutsch</option>
@@ -48,8 +48,9 @@
     <div class="container">
       <div class="jumbotron justify-content-center transform-50">
 
-         <div id="surveyElement" style="display: inline-block; width: 98%;height:99vh;">
+         <div id="surveyElement" style="display: inline-block; max-width: 98%;max-height:95vh;">
            <survey params="survey: model"></survey>
+           <survey params="locale: de"></survey>
          </div>
        </div>
     </div> 
@@ -57,24 +58,15 @@
 
    
     
-    <script src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/js/knockoutjs_json_de.js"></script>
-    <script src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/js/o23_umfrage_de.js"></script>
+    <script src="./js/ostrale023-umfrage_json.js"></script>
+    <script src="./js/ostrale23-umfrage.js"></script>
 <script>
   survey.locale = 'de';
 </script>
     
-<script>
-  function changeLocale() {
-    survey.locale = document.getElementById('selLocales').value;
-      if (!!window.survey) {
-          survey.locale = document.getElementById('selLocales').value;
-        }
-    }
-    changeLocale();
-</script>
   </main>
-<footer class="py-5 bg-dark">
-   <div class="container hidden">
+<footer class="py-5 bg-dark hidden">
+   <div class="container">
 <p class="m-0 text-center text-white">
         © Ostrale 2023 |
         All Rights Reserved</p>
