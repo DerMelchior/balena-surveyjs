@@ -1,111 +1,106 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de","en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <!-- Bootstrap CSS -->
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/survey.jquery.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./css/defaultV2.min.css" />
-    <link rel="stylesheet" href="./css/normalize.min.css" />
-    <link rel="stylesheet" href ="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href ="./css/bootstrap-grid.min.css" />
-    <!-- Apply the Bootstrap theme -->
-    <script src="./js/bootstrap-integration.min.js"></script>
+    <meta name="description" content="Umfrage zur Ostrale Biennale O23">
+    <meta name="author" content="Th.Haupt">
 
-    <link rel="stylesheet" href="./css/flag-icon.min.css" />
-    <link rel="stylesheet" href ="./css/styles.css" />
-    <link rel="icon" type="image/vnd.icon" href="./images/favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <script src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/js/jquery.min.js"></script>
+    <script src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/js/survey.jquery.min.js"></script>
+    <script src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/defaultV2.min.css" />
+    <link rel="stylesheet" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/normalize.min.css" />
+    <link rel="stylesheet" href ="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/bootstrap.min.css" />
+    <link rel="stylesheet" href ="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/bootstrap-grid.min.css" />
+    <!-- Apply the Bootstrap theme -->
+    <script src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/js/bootstrap-integration.min.js"></script>
+
+    <link rel="stylesheet" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/flag-icon.min.css" />
+    <link rel="stylesheet" href ="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/css/styles.css" />
+    <link rel="icon" type="image/vnd.icon" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/images/favicon.ico" />
     
-    <title>Ostrale O23 Umfrage</title>
+    <title>Umfrage zur Ostrale Biennale O23</title>
 </head>
-<body>
-    <header  style="display: none;">
-        <div class="container-md py-4 top">
+<body id="page-top">
+    <header class="header-top hidden" style="display: none;">
+        <div class="container">
             <div class="row">
                 <div class="col left">
-                    <img src="./images/kammer_flimmern_o23_x750_250px_96dpi_1024px.png" loading="lazy" width="261px" height="52px" alt="kammer_flimmern_O23" class="img">
+                    <img src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/images/kammer_flimmern_o23_x750_250px_96dpi_1024px.png" width="261px" height="52px" alt="kammer flimmern logo" class="img-fluid">
                 </div>
-                <div class="col center">
-                    
+                <div class="col center text-center">
+                  <h1>Umfrage zur Ostrale Biennale O23 </h1>  
                 </div>
                 <div class="col right">
-                    <img src = "./images/ostrale_logo_de_250px_96dpi_1024px.png"  loading="eager" width="261px" height="80px" class="img" alt="Ostrale Logo">
+                    <img src = "https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/images/ostrale_logo_de_250px_96dpi_1024px.png" width="261px" height="80px" class="img-fluid" alt="Ostrale Logo">
                 </div>
             </div>
         </div>
     </header>
 <main>
-<div class="container-md py-4 transform-50">
-    <div class="row">
-        <div class="jumbotron justify-content-center">
-            <div id="carouselId" class="carousel slide carousel-fade" data-ride="carousel" data-interval="15000">
+<div class="container">
+   <div class="jumbotron justify-content-center transform-50">
+          <div id="carouselId" class="carousel slide carousel-fade" data-ride="carousel" data-interval="15000" data-bs-interval="15000">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-
-                        <div class="container">
-                            <h2 class="display-4">Beteilige Dich an der Umfrage zur Biennale O23!</h2>
-                            <p class="lead">Flyer OSTRALE Biennale O23 / Stephanie Abben / de</p>
-                            <hr class="my-2" style="color: red;">
-                            <img src = "./images/slider/abben_001_893px.png" weight="893px" height="893px" loading="lazy" class="img-fluid" alt="Stephanie Abben">
-                            <p class="lead">
-                                <a class="btn btn-primary btn-xxl" href="./knockoutjs_german.html" role="button" style="margin-top: 15px;background-color: #ae0000;border-color: beige;">Starte Umfrage</a>
-                            </p>
-                        </div>
-                    
+                    <div class="container">
+                         <h2 class="display-4 text-black text-center">Beteilige Dich an der Umfrage zur Biennale O23!</h2>
+                         <p class="lead">Flyer OSTRALE Biennale O23 / Stephanie Abben / de</p>
+                         <hr class="my-2 fg-alert" >
+                         <img src = "https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/images/slider/abben_001_893px.png" weight="893px" height="893px" class="img-fluid" alt="Flyer OSTRALE Biennale O23 / Stephanie Abben / de" caption="Flyer OSTRALE Biennale O23 (Bild: Stephanie Abben/de)">
+                         <p class="lead">
+                            <a class="btn btn-red btn-xxl" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/knockoutjs_german.html" role="button" style="margin-top: 15px;background-color: #ae0000;border-color: beige;">Starte Umfrage</a>
+                         </p>
+                     </div>
                 </div>
                 <div class="carousel-item">
-                        <div class="container">
-                            <h2 class="display-4">Take part in the survey about the biennial O23!</h2>
+                    <div class="container">
+                        <h2 class="display-4">Take part in the survey about the biennial O23!</h2>
                             <p class="lead">Flyer OSTRALE Biennale O23 / Elvio Chiricozzi / en</p>
-                            <hr class="my-2" style="color: red;">
-                            
-                            <img src="./images/slider/choi_001_893px.png" weight="893px" height="893px"  loading="lazy" class="img-fluid" alt="Elvio Chiricozzi">
+                            <hr class="my-2 alert">
+                            <img src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/images/slider/choi_001_893px.png" weight="893px" height="893px"  loading="lazy" class="img-fluid" alt="Elvio Chiricozzi">
                             <p class="lead">
-                                <a class="btn btn-primary btn-xxl" href="./knockoutjs_german.html" role="button" style="margin-top: 15px;background-color: #ae0000;border-color: beige;" >Start the survey</a>
+                                <a class="btn btn-red btn-xxl" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/knockoutjs_german.html" role="button" style="margin-top: 15px;background-color: #ae0000;border-color: beige;" >Start the survey</a>
                             </p>
                         </div>
 
                 </div>
                 <div class="carousel-item">
-
-                        <div class="container">
+                     <div class="container">
                             <h2 class="display-4">Sag uns Deine Meinung!</h2>
                             <p class="lead">Flyer OSTRALE Biennale O23 / Michael Wesely / en</p>
-                            <hr class="my-2" style="color: red;">
-                            <p>More info</p>
-                            <img src="./images/slider/wesley_001_893px.png" weight="893px" height="893px" loading="lazy" class="img-fluid" alt="Michael Wesely">
+                            <hr class="my-2 alert">
+                            <img src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/images/slider/wesley_001_893px.png" weight="893px" height="893px" loading="lazy" class="img-fluid" alt="Michael Wesely">
                             <p class="lead">
-                                <a class="btn btn-primary btn-xxl" href="./knockoutjs_german.html" role="button" style="margin-top: 15px;background-color: #ae0000;border-color: beige;">Starte Umfrage</a>
+                                <a class="btn btn-red btn-xxl" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/knockoutjs_german.html" role="button" style="margin-top: 15px;background-color: #ae0000;border-color: beige;">Starte Umfrage</a>
                             </p>
                         </div>
-
                 </div>
                 <div class="carousel-item">
-
-                        <div class="container">
+                    <div class="container">
                             <h1 class="display-4">Tell us your opinion</h1>
                             <p class="lead">Flyer OSTRALE Biennale O23 / Philipp Valenta / de</p>
-                            <hr class="my-2" style="color: red;">
-                            <img src="./images/slider/valenta_001_893px.png" weight="893px" height="893px" loading="lazy" class="img-fluid" alt="Philipp Valenta">
+                            <hr class="my-2 alert">
+                            <img src="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/images/slider/valenta_001_893px.png" weight="893px" height="893px" loading="lazy" class="img-fluid" alt="Philipp Valenta">
                             <p class="lead">
-                                <a class="btn btn-primary btn-xxl" href="./knockoutjs_german.html" role="button" style="margin-top: 15px;background-color: #ae0000;border-color: beige;">Start the survey</a>
+                                <a class="btn btn-red btn-xxl" href="https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com/knockoutjs_german.html" role="button" style="margin-top: 15px;background-color: #ae0000;border-color: beige;">Start the survey</a>
                             </p>
-                        </div>
-
+                    </div>
                 </div>
-            </div>
- 
+           </div>
         </div>
-    </div>
-    
-    </div>
+
+ </div>
 </div>
 </main>
-
+<footer>
+   <div class="container hidden"></div>
+</footer>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 #FROM igalia/balena-browser-wpe:%%BALENA_MACHINE_NAME%%
-FROM igalia/balena-browser-wpe:raspberrypi3-64
+FROM igalia/balena-browser-wpe:raspberrypi3
 COPY balena/image.manifest /image.manifest
 
 COPY balena/wpe-init /wpe-init

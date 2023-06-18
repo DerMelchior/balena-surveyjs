@@ -5,35 +5,52 @@ volumes:
   weston:
 services:
   audio:
-    image: balenablocks/audio
+    image: bh.cr/balenalabs/audio-aarch64
     privileged: true
+    environment:
+      AUDIO_OUTPUT: RPI_HEADPHONES
     labels:
       io.balena.features.dbus: '1'
       io.balena.features.firmware: '1'
     volumes:
       - 'pulse:/run/pulse'
+    ports:
+      - 4317:4317
   weston:
     restart: always
     image: igalia/balena-weston:raspberrypi3-64
     privileged: true
+    network_mode: host
+    devices:
+      - '/dev:/dev'
     labels:
-      io.balena.features.dbus: '1'
-      io.balena.features.firmware: '1'
+      - 'io.balena.features.dbus=1'
+      - 'io.balena.features.firmware=1'
+      - 'io.balena.features.gpu=1'
     volumes:
       - 'weston:/run/weston'
-  wpe:
-    restart: always
-    build: ./browser-wpe
+  balenalabs-browser:
+#    build: ./balenalabs-browser
+    image: bh.cr/balenalabs/browser-aarch64
     privileged: true
-    ports:
-      - 8080:8080
-      - 12321:12321
-    volumes:
-      - 'weston:/run/weston'
-      - 'pulse:/run/pulse'
+    network_mode: host
+    restart: always
     labels:
-      io.balena.features.dbus: '1'
-      io.balena.features.firmware: '1'
+      - 'io.balena.features.dbus=1'
+      - 'io.balena.features.firmware=1'
+      - 'io.balena.features.gpu=1'
+    ports:
+      - 5011:5011
+      - 35173:35173
+    volumes:
+      - 'settings:/data'
+    environment:
+      LAUNCH_URL: 'https://localhost'
+      WINDOW_SIZE: '1920,1080'
+      ENABLE_GPU: '1'
+      KIOSK: '1'
+      PERSISTENT: '1'
+
   scheduler:
     restart: always
     build: ./scheduler
@@ -45,10 +62,6 @@ services:
     labels:
       io.balena.features.dbus: '1'
       io.balena.features.firmware: '1'
-  fbcp:
-    build: ./fbcp
-    restart: on-failure
-    privileged: true
   lighttpd:
     build: ./lighttpd
     restart: always
