@@ -45,7 +45,8 @@ data:
     - SHOW_CURSOR: 0
     - CONTROL_TV: 0
     - ENABLE_GPU: 1
-    - KIOSK: 1
+    - KIOSK: 0
+    - WPE_URL: 'https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com'
     - PERSISTENT: 1
     - PORTAL_SSID: ostraleDash
     - PORTAL_PASSPHRASE: 100%ostrale
@@ -64,4 +65,3 @@ data:
     - intel-nuc
     - genericx86-64-ext
     - raspberrypi400-64
-version: 2.0.8

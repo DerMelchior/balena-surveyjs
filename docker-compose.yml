@@ -49,12 +49,6 @@ services:
     build: ./fbcp
     restart: on-failure
     privileged: true
-  browsercontrol:
-    build: ./browsercontrol
-    restart: always
-    privileged: true
-    ports:
-      - 8080:8181
   lighttpd:
     build: ./lighttpd
     restart: always
