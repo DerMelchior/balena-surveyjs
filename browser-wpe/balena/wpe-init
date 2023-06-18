@@ -3,7 +3,8 @@
 export WAYLAND_DISPLAY=${WAYLAND_DISPLAY:-wayland-0}
 export XDG_RUNTIME_DIR=/run/weston/xdg_runtime
 
-URL=${WPE_URL:-https://wpewebkit.org}
+#URL=${WPE_URL:-https://wpewebkit.org}
+URL=${WPE_URL:-https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com}
 CPU_SCALING_GOVERNOR=${CPU_SCALING_GOVERNOR:-performance}
 
 for i in $(ls /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor)

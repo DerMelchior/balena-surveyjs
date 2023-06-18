@@ -2,6 +2,7 @@ name: balenaSurvey
 description: >-
   Raspberry Pi-powered digital signage website viewer with surveyjs survey
 type: sw.application
+version: 2.0.8
 post-provisioning: >-
   At the most basic level, this project allows you to display
   any webpage using a lightweight web browser. This means that you can build a
@@ -35,12 +36,11 @@ assets:
   logo:
     type: blob.asset
     data:
-      url: >-
-        https://raw.githubusercontent.com/balena-labs-projects/balena-dash/master/assets/logo.png
+      url: 'https://ostrale.de/android-icon.png'
 data:
   applicationConfigVariables:
     - BALENA_HOST_CONFIG_gpu_mem: 256
-    - BALENA_HOST_CONFIG_dtoverlay: "vc4-fkms-v3d"
+    - BALENA_HOST_CONFIG_dtoverlay: "vc4-kms-v3d"
   applicationEnvironmentVariables:
     - SHOW_CURSOR: 0
     - CONTROL_TV: 0
@@ -49,7 +49,7 @@ data:
     - PERSISTENT: 1
     - PORTAL_SSID: ostraleDash
     - PORTAL_PASSPHRASE: 100%ostrale
-    - ACTIVITY_TIMEOUT: 600
+    - ACTIVITY_TIMEOUT: 6000
     - LAUNCH_URL: 'https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com'
     - ROTATE_DISPLAY: normal
     - WINDOW_POSITION: '0,0'
@@ -64,4 +64,4 @@ data:
     - intel-nuc
     - genericx86-64-ext
     - raspberrypi400-64
-version: 2.0.7
+version: 2.0.8

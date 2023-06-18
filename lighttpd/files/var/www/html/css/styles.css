@@ -119,7 +119,7 @@
 }
 
 /* (1920x1080) Full HD Display */
-@media  screen and (max-device-width: 1920px) and (min-device-width: 1280px) {
+@media  screen and (max-device-width: 1918px) and (min-device-width: 1278px) {
   /* insert styles here */
 
    /* knockoutjs modifikations here */
