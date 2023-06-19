@@ -10,9 +10,15 @@ html, body {
   display:none;
 }
 
+/* startpage related stuff */
 #carouselId > div > div.carousel-item.active > div > img {
    max-height: 470px;
    width: auto;
+}
+
+/* surveyJS related stuff */
+#surveyElement > div > form > div.sd-container-modern > div.sd-title.sd-container-modern__title {
+   display: none;
 }
  
 /* (320x480) iPhone (Original, 3G, 3GS) */
@@ -288,12 +294,22 @@ html, body {
   transition: all 2s ease-in-out;
   /* ---------------------------- background-color: --------------------------- */
 }
+.sd-imagepicker__image {
+  padding-bottom: 50px
+}
 .sd-imagepicker__image-container {
   border: 1px solid darkgrey;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
+.sd-imagepicker__text {
+  position: absolute;
+  margin-top: 65% !important;
+}
 
+.sd-row__question {
+  white-space: normal !important;
+}
 
 .sd-element--with-frame > .sd-element > .sd-question > .sd-row__question {
   /* background-image: none; */
@@ -301,6 +317,16 @@ html, body {
 
 }
 .sd-imagepicker__item img, .sd-imagepicker__item .sd-imagepicker__image-container>div {
-  background-color: unset;
+  border: 2px solid #dc3545;
+  border-radius: 3px;
+  object-fit: cover !important;
+  opacity: .5;
+
 }
 
+.sd-imagepicker__item:focus-within .sd-imagepicker__image, .sd-imagepicker__item--allowhover .sd-imagepicker__image:hover {
+  opacity: 1.0;
+}
+.sd-imagepicker__item img:hover {
+  
+}
