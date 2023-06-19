@@ -11,15 +11,32 @@ html, body {
 }
 
 /* startpage related stuff */
-#carouselId > div > div.carousel-item.active > div > img {
-   max-height: 470px;
+#carouselId > div.carousel-inner > div.carousel-item > img.img-fluid {
+   max-height: 590px;
    width: auto;
 }
+#carouselId > div.carousel-inner > div.carousel-item > .carousel-caption {
+    bottom: 10rem;
+  }
+#carouselId > div.carousel-inner > div.carousel-item > .carousel-caption > a.btn-lg {
+   padding: 0.75rem 1rem;
+   font-size: 2.0rem;
+   border-radius: 0.5rem;
+   background-blend-mode: overlay;
+   opacity: 70%;
+
+}
+
 
 /* surveyJS related stuff */
 #surveyElement > div > form > div.sd-container-modern > div.sd-title.sd-container-modern__title {
    display: none;
 }
+#sv-nav-next > div > input {
+   color: #dc3545;
+   border: 2px solid #dc3545;
+}
+
  
 /* (320x480) iPhone (Original, 3G, 3GS) */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -112,10 +129,14 @@ html, body {
 /* (2048x1536) iPad 3 */
 @media only screen and (min-device-width: 1536px) and (max-device-width: 2048px) {
   /* insert styles here */
-#carouselId > div > div.carousel-item.active > div > img {
-   max-height: 640px;
-   width: auto;
-}
+
+  #carouselId > div.carousel-inner > div.carousel-item > img.img-fluid {
+     max-height: 640px;
+     width: auto;
+  }
+  .carousel-caption {
+    bottom: 20rem;
+  }
 }
 
 /* (1280x720) Galaxy Note 2, WXGA */
@@ -147,10 +168,13 @@ html, body {
 @media  screen and (max-device-width: 1920px) and (min-device-width: 1920px) {
   /* insert styles here */
 
-#carouselId > div > div.carousel-item.active > div > img {
-   max-height: 410px;
+#carouselId > div > div.carousel-item > img.img-fluid {
+   max-height: 610px;
    width: auto;
 }
+#carouselId > div > div.carousel-item > .carousel-caption {
+    bottom: 20rem;
+  }
    /* knockoutjs modifikations here */
 
 
