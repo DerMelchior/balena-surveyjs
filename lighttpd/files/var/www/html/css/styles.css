@@ -9,6 +9,11 @@ html, body {
 .hidden {
   display:none;
 }
+
+#carouselId > div > div.carousel-item.active > div > img {
+   max-height: 470px;
+   width: auto;
+}
  
 /* (320x480) iPhone (Original, 3G, 3GS) */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -72,9 +77,6 @@ html, body {
       z-index: 1061 !important;
   }
   
-  h3 {
-      margin-top: 50px;
-  }
  
 }
 
@@ -98,11 +100,16 @@ html, body {
 /* (1024x768) iPad 1 & 2, Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* insert styles here */
+
 }
 
 /* (2048x1536) iPad 3 */
 @media only screen and (min-device-width: 1536px) and (max-device-width: 2048px) {
   /* insert styles here */
+#carouselId > div > div.carousel-item.active > div > img {
+   max-height: 640px;
+   width: auto;
+}
 }
 
 /* (1280x720) Galaxy Note 2, WXGA */
@@ -131,14 +138,14 @@ html, body {
 }
 
 /* (1920x1080) Full HD Display */
-@media  screen and (max-device-width: 1918px) and (min-device-width: 1278px) {
+@media  screen and (max-device-width: 1920px) and (min-device-width: 1920px) {
   /* insert styles here */
 
-   /* knockoutjs modifikations here */
-
- .sv_window_content {
- 
+#carouselId > div > div.carousel-item.active > div > img {
+   max-height: 410px;
+   width: auto;
 }
+   /* knockoutjs modifikations here */
 
 
 .sd-imagepicker__image:active {
@@ -201,11 +208,6 @@ html, body {
   border-radius: 5px;
 }
 
-
-.sd-logo__image {
-  max-width: 120px !important;
-  max-height: 60px !important;
-}
 
 .sd-element--with-frame > .sd-element > .sd-question > .sd-row__question {
   /* background-image: none; */
@@ -231,15 +233,6 @@ html, body {
 
  /* knockoutjs modifikations here */
 
- .sv_window_content {
-  max-height: unset !important;
-}
-
-body > div:nth-child(4) > div.sv_window {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
 .sd-imagepicker__image:active {
   border: solid 2px #ea0000;
   border-color: #ea0000;
@@ -311,7 +304,3 @@ body > div:nth-child(4) > div.sv_window {
   background-color: unset;
 }
 
-#carouselId > div > div.carousel-item.active > div > img {
-   max-height: 410px;
-   width: auto;
-}
