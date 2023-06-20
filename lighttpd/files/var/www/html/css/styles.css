@@ -11,28 +11,37 @@ html, body {
 }
 .bs-red, .text-danger {
   color: #dc3545;
-  font-color:#dc3545;
 }
 
+#logoID {
+  background-image: url("./images/kammer_flimmern_1000x200.png");
+  background-size: contain;
+  /* background-color: transparent; */
+}
+
+#headerTextID {
+  font-size: 0.6rem;
+  /* text-align: right; */
+}
 .text-small {
   font-size: large;
   font-weight: normal;
   font-style: light;
-  line-height: 0.45;
-  font-family: OpenSans;
+  line-height: 0.45em;
+  font-family:  monospace;
 }
 .text-bold {
   font-size: xx-large;
   font-weight: bold;
   font-style: bold;
-  line-height: 0.75;
-  font-family: roboto;
+  line-height: 0.75rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 div.logo {
   max-height: 80px;
   height: 60px;
-  padding-left: 50px;
-  padding-top: 10px;
+  padding-left: 30px;
+  padding-top: 30px;
 }
 img.logo {
   max-height: 80px;
@@ -40,6 +49,12 @@ img.logo {
 }
 header {
   margin-bottom:30px;
+}
+hr.bs-red {
+  color:#dc3545;
+  height: 3px;
+  width:95%;
+  margin-left:40px;
 }
 /* startpage related stuff */
 #carouselId > div.carousel-inner > div.carousel-item > img {
@@ -122,11 +137,6 @@ header {
     .btn:active, .btn:focus {
       border: 1px solid #dc3545;
     }
-
-  
- 
-  
- 
 }
 
 /* (720x1280) Galaxy Nexus, Landscape */
@@ -156,13 +166,7 @@ header {
 @media only screen and (min-device-width: 1536px) and (max-device-width: 2048px) {
   /* insert styles here */
 
-  #carouselId > div.carousel-inner > div.carousel-item > img {
-     max-height: 570px;
-     width: auto;
-  }
-  #carouselId > div.carousel-inner > div.carousel-item > .carousel-caption {
-    bottom: 15rem;
-  }
+  
 }
 
 /* (1280x720) Galaxy Note 2, WXGA */
@@ -193,7 +197,46 @@ header {
 /* (1920x1080) Full HD Display */
 @media  screen and (max-device-width: 1920px) and (min-device-width: 1920px) {
   /* insert styles here */
+  #carouselId > div.carousel-inner > div.carousel-item > img {
+    max-height: 570px;
+    width: auto;
+ }
+ #carouselId > div.carousel-inner > div.carousel-item > .carousel-caption {
+   bottom: 15rem;
+ }
 
+
+  #headerTextID {
+    font-size: 0.7rem;
+    /* text-align: right; */
+  }
+  .text-small {
+    font-size: xx-small;
+    font-weight: normal;
+    font-style: normal;
+  /*  line-height: 0.65em; */
+    font-family:  monospace;
+  }
+  .text-bold {
+    font-size: xxx-large;
+    font-weight: bold;
+    font-style: bold;
+   /* line-height: 0.9em;*/
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  div.logo {
+    padding-left: 10px;
+  }
+  img.logo {
+    max-height: 80px;
+    height: 60px;
+  }
+  header {
+    margin-bottom:50px;
+    padding-top: 30px;
+    max-height: 100px;
+    height: 80px;
+  }
   #carouselId > div.carousel-inner > div.carousel-item > img {
      max-height: 640px;
      width: auto;

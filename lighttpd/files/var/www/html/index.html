@@ -36,60 +36,75 @@
     <script src="./js/scripts.js" type="text/javascript"></script>
     <title>Umfrage zur Ostrale Biennale O23</title>
 </head>
-<body id="page-top">
+<body id="pageID">
 <header>
-    <div class="container-xl">
-       <div class="row">
-                <div class="col-sm-6 logo">
-                    <p class="text-bold" style="font-family:roboto;"><span class="text-danger bs-red text-bold" style="font-family:roboto;">O</span>STRALE Biennale <span class="text-danger bs-red text-bold" style="font-family:roboto;">O</span>23<br>
-                      <span class="small text-end font-monospace">14. Internationale Ausstellung zeitgenössischer Künste</span>
-         	</p>
-                    
-                </div>
-                
-                <div class="col-sm-6 logo" style="direction:rtl;">
-                    <img src="./images/kammer_flimmern_1000x200.png" alt="kammer flimmern logo" class="img-fluid logo">
-                </div>
-	    </div>
-         </div>
-         <hr class="bs-red bg-danger" style="width:95%;margin-left:40px;">
-    </header>
+    <div class="col-sm-6 logo">
+        <p class="text-bold"><span class="text-danger bs-red text-bold">O</span>STRALE Biennale <span class="text-danger bs-red text-bold" style="font-family:roboto;">O</span>23
+        </p>
+        <p class="text-small"><span id="headerTextID" class="font-monospace">14. Internationale Ausstellung zeitgenössischer Künste</span>
+       	</p>
+    </div>
+    <div class="col-sm-6 logo bg-image" id="logoID" style="background-image: url('./images/kammer_flimmern_1000x200.png');background-size: contain;">
+        <!--<img src="./images/kammer_flimmern_1000x200.png" alt="kammer flimmern logo" class="img-fluid logo">-->
+    </div>
+</header>
+<hr class="bs-red bg-danger">
 <main>
 <div class="container-xl">
    <div class="jumbotron-lg justify-content-center" style="margin: 0 auto; ">
           <div id="carouselId" class="carousel carousel-fade slide" data-ride="carousel" data-interval="7000" data-bs-interval="5000">
             <div class="carousel-inner text-center" role="listbox">
                 <div class="carousel-item active">
-                         <h2 class="display-3 text-center">Beteilige Dich an der <span class="bs-red text-bold text-danger">O</span>23 Umfrage!</h2>
-                         <img src = "./images/slider/abben_001_893px.png" class="d-block vw-75 border" alt="Flyer OSTRALE Biennale O23 / Stephanie Abben" caption="Flyer OSTRALE Biennale O23 (Bild: Stephanie Abben/de)">
-                         <p class="lead">Flyer OSTRALE Biennale <span class="bs-red text-danger">O</span>23 / <span class="fst-italic small">Stephanie Abben / de</span></p>
-                         <div class="carousel-caption">
-                            <a class="btn btn-danger btn-xxl text-white ripple" href="./knockoutjs_german.html" role="button">Starte Umfrage</a>
+                    <div class="col-sm-6 left">
+                        <img src = "./images/slider/abben_001_893px.png" class="d-block vw-75" alt="Flyer OSTRALE Biennale O23 / Stephanie Abben" caption="Flyer OSTRALE Biennale O23 (Bild: Stephanie Abben/de)">
+                        <p class="lead">Flyer OSTRALE Biennale <span class="bs-red text-danger">O</span>23 / <span class="fst-italic text-small">Stephanie Abben / de</span></p>
+                    </div>
+                    <div class="col-sm-6 right">
+                        <h2 class="display-3 text-center text-bold">Beteilige Dich an der <span class="bs-red text-bold text-danger">O</span>23 Umfrage!</h2>
+                        <br/>
+                        <div class="carousel-caption bottom">
+                            <a class="btn btn-danger btn-xxl text-white ripple" href="./umfrage.html" role="button">Starte Umfrage</a>
                          </div>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                        <h2 class="display-3 text-center">Take part in the survey about the biennial <span class="bs-red text-bold danger">O</span>23!</h2>
-                            <img src="./images/slider/choi_001_893px.png" class="d-block vw-75 border" alt="Flyer OSTRALE Biennale O23 / Elvio Chiricozzi">
-                            <p class="lead">Flyer OSTRALE Biennale <span class="bs-red text-danger">O</span>23 / <span class="fst-italic small">Elvio Chiricozzi / en</span></p>
-                            <div class="carousel-caption">
-                                <a class="btn btn-danger btn-xxl text-white ripple" href="./knockoutjs_german.html" role="button">Start the survey</a>
-                            </div>
+                    <div class="col-sm-6 left">
+                        <h2 class="display-3 text-center text-bold">Take part in the survey about the biennial <span class="bs-red text-bold text-danger">O</span>23!</h2>
+                        <br />
+                        <div class="carousel-caption bottom">
+                            <a class="btn btn-danger btn-xxl text-white ripple" href="./umfrage.html" role="button">Start the survey</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 right">
+                        <img src="./images/slider/choi_001_893px.png" class="d-block vw-75" alt="Flyer OSTRALE Biennale O23 / Elvio Chiricozzi">
+                        <p class="lead">Flyer OSTRALE Biennale <span class="bs-red text-danger">O</span>23 / <span class="fst-italic small">Elvio Chiricozzi / en</span></p>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                            <h2 class="display-3 text-center">Sag uns Deine Meinung!</h2>
-                            <img src="./images/slider/wesley_001_893px.png" class="d-block vw-75 border" alt="Flyer OSTRALE Biennale O23 / Michael Wesely">
-                            <p class="lead">Flyer OSTRALE Biennale <span class="bs-red text-danger">O</span>23 / <span class="fst-italic small">Michael Wesely / en</span></p>
-                            <div class="carousel-caption">
-                                <a class="btn btn-danger btn-xxl text-white ripple" href="./knockoutjs_german.html" role="button">Starte Umfrage</a>
-                            </div>
+                    <div class="col-sm-6 left">
+                        <h2 class="display-3 text-center text-bold">Sag uns Deine Meinung!</h2>
+                        <br />
+                        <div class="carousel-caption bottom">
+                            <a class="btn btn-danger btn-xxl text-white ripple" href="./umfrage.html" role="button">Starte Umfrage</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 right">
+                        <img src="./images/slider/wesley_001_893px.png" class="d-block vw-75" alt="Flyer OSTRALE Biennale O23 / Michael Wesely">
+                        <p class="lead">Flyer OSTRALE Biennale <span class="bs-red text-danger">O</span>23 / <span class="fst-italic small">Michael Wesely / en</span></p>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                            <h2 class="display-3 text-center">Tell us your opinion</h2>
-                            <img src="./images/slider/valenta_001_893px.png" class="d-block vw-75 border" alt="Flyer OSTRALE Biennale O23 / Philipp Valenta">
-                            <p class="lead">Flyer OSTRALE Biennale <span class="bs-red text-danger">O</span>23 / <span class="fst-italic small">Philipp Valenta / de</span></p>
-                            <div class="carousel-caption">
-                                <a class="btn btn-danger btn-xxl text-white ripple" href="./knockoutjs_german.html" role="button">Start the survey</a>
-                            </div>
+                    <div class="col-sm-6 left">
+                        <img src="./images/slider/valenta_001_893px.png" class="d-block vw-75" alt="Flyer OSTRALE Biennale O23 / Philipp Valenta">
+                        <p class="lead">Flyer OSTRALE Biennale <span class="bs-red text-danger">O</span>23 / <span class="fst-italic small">Philipp Valenta / de</span></p>
+                    </div>
+                    <div class="col-sm-6 right">
+                        <h2 class="display-3 text-center text-bold">Tell us your opinion</h2>
+                        <br />
+                        <div class="carousel-caption bottom">
+                            <a class="btn btn-danger btn-xxl text-white ripple" href="./umfrage.html" role="button">Start the survey</a>
+                        </div>
+                    </div>
                 </div>
            </div>
         </div>
