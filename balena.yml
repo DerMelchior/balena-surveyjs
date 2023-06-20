@@ -38,24 +38,22 @@ assets:
       url: 'https://ostrale.de/android-icon.png'
 data:
   applicationConfigVariables:
-    - BALENA_HOST_CONFIG_gpu_mem: '392'
+    - BALENA_HOST_CONFIG_gpu_mem: '396'
     - BALENA_HOST_CONFIG_dtoverlay: 'vc4-kms-v3d'
   applicationEnvironmentVariables:
-    - SHOW_CURSOR: 0
+    - SHOW_CURSOR: '1'
     - CONTROL_TV: '1'
     - ENABLE_GPU: '1'
-    - KIOSK: '1'
-    - WPE_URL: 'https://07a2b28cffdec25ae447c46c7c91ec6e.balena-devices.com'
+    - KIOSK: '0'
     - PERSISTENT: '1'
-    - PORTAL_SSID: ostraleDash
-    - PORTAL_PASSPHRASE: 100%ostrale
     - ACTIVITY_TIMEOUT: 6000
-    - LAUNCH_URL: 'http://localhost/'
+    - LAUNCH_URL: 'http://localhost'
     - ROTATE_DISPLAY: normal
     - WINDOW_POSITION: '0,0'
     - WINDOW_SIZE: '192,1080'
+    - API_PORT: '5012'
+    - REMOTE_DEBUG_PORT: '35173'
     - LOCAL_HTTP_DELAY: 0
-    - FBCP_DISPLAY: ''
   defaultDeviceType: raspberrypi3-64
   supportedDeviceTypes:
     - raspberrypi4-64

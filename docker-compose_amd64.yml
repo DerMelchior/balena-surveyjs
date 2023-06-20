@@ -1,0 +1,76 @@
+version: '2'
+volumes:
+  settings:
+  pulse:                          # Required for PA over UNIX socket
+  weston:
+services:
+  audio:
+    image: bh.cr/balenalabs/audio-amd64
+    privileged: true
+    environment:
+      AUDIO_OUTPUT: RPI_HEADPHONES
+    labels:
+      - 'io.balena.features.dbus=1'
+      - 'io.balena.features.firmware=1'
+      - 'io.balena.features.kernel-modules=1'
+      - 'io.balena.features.procfs=1'
+      - 'io.balena.features.sysfs=1'
+    volumes:
+      - 'pulse:/run/pulse'
+    ports:
+      - 4317:4317
+  weston:
+    restart: no
+    image: igalia/balena-weston-amd64
+    privileged: true
+    network_mode: host
+    devices:
+      - '/dev/dri:/dev/dri'
+    labels:
+      - 'io.balena.features.dbus=1'
+      - 'io.balena.features.firmware=1'
+      - 'io.balena.features.gpu=1'
+      - 'io.balena.features.kernel-modules=1'
+      - 'io.balena.features.procfs=1'
+      - 'io.balena.features.sysfs=1'
+    volumes:
+      - 'weston:/run/weston'
+  balenalabs-browser:
+    build: ./balenalabs-browser
+#    image: bh.cr/balenalabs/browser
+    privileged: true
+    network_mode: host
+    devices:
+      - '/dev/dri:/dev/dri'
+    restart: no
+    labels:
+      - 'io.balena.features.dbus=1'
+      - 'io.balena.features.firmware=1'
+      - 'io.balena.features.gpu=1'
+      - 'io.balena.features.kernel-modules=1'
+      - 'io.balena.features.procfs=1'
+      - 'io.balena.features.sysfs=1'
+    ports:
+      - 5011:5011
+      - 35173:35173
+    volumes:
+      - 'settings:/data'
+    environment:
+      LAUNCH_URL: 'https://localhost'
+      WINDOW_SIZE: '1920,1080'
+      ENABLE_GPU: '1'
+      KIOSK: '1'
+      PERSISTENT: '1'
+
+  scheduler:
+    restart: no
+    build: ./scheduler
+    privileged: true
+
+  lighttpd:
+    build: ./lighttpd
+    restart: always
+    privileged: true
+    ports:
+      - 80:80
+      - 443:443

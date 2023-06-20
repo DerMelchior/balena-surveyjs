@@ -1,67 +1,69 @@
 version: '2'
 volumes:
   settings:
+  browser-data:
   pulse:                          # Required for PA over UNIX socket
-  weston:
+
 services:
-  audio:
-    image: bh.cr/balenalabs/audio-aarch64
-    privileged: true
-    environment:
-      AUDIO_OUTPUT: RPI_HEADPHONES
-    labels:
-      io.balena.features.dbus: '1'
-      io.balena.features.firmware: '1'
-    volumes:
-      - 'pulse:/run/pulse'
-    ports:
-      - 4317:4317
-  weston:
-    restart: always
-    image: igalia/balena-weston:raspberrypi3-64
-    privileged: true
-    network_mode: host
-    devices:
-      - '/dev:/dev'
-    labels:
-      - 'io.balena.features.dbus=1'
-      - 'io.balena.features.firmware=1'
-      - 'io.balena.features.gpu=1'
-    volumes:
-      - 'weston:/run/weston'
+#  audio:
+#    image: balenaplayground/balenalabs-audio:intel-nuc
+#    privileged: true
+#    environment:
+#      AUDIO_OUTPUT: RPI_HEADPHONES
+#    labels:
+#      - 'io.balena.features.dbus=1'
+#      - 'io.balena.features.firmware=1'
+#      - 'io.balena.features.kernel-modules=1'
+#      - 'io.balena.features.procfs=1'
+#      - 'io.balena.features.sysfs=1'
+#    volumes:
+#      - 'pulse:/run/pulse'
+#    ports:
+#      - 4317:4317
   balenalabs-browser:
-#    build: ./balenalabs-browser
-    image: bh.cr/balenalabs/browser-aarch64
+    build: ./balenalabs-browser
     privileged: true
     network_mode: host
     restart: always
     labels:
       - 'io.balena.features.dbus=1'
       - 'io.balena.features.firmware=1'
-      - 'io.balena.features.gpu=1'
     ports:
-      - 5011:5011
+      - 5012:5012
       - 35173:35173
     volumes:
-      - 'settings:/data'
+      - 'browser-data:/data'
     environment:
       LAUNCH_URL: 'https://localhost'
+      LOCAL_HTTP_DELAY: '10'
+      API_PORT: '5012'
+      SHOW_CURSOR: '1'
+      REMOTE_DEBUG_PORT: '35173'
       WINDOW_SIZE: '1920,1080'
       ENABLE_GPU: '1'
-      KIOSK: '1'
+      KIOSK: '0'
       PERSISTENT: '1'
-
+    depends_on: 
+      - lighttpd
+#  kiosk:
+#    build: ./kiosk
+#    restart: no
+#    privileged: true
+#    ports:
+#      - 5011:5011
+#    volumes:
+#      - 'settings:/data'
+#    environment:
+#      LAUNCH_URL: 'https://localhost'
+#      WINDOW_SIZE: '1920,1080'
+#      ENABLE_GPU: '0'
+#      KIOSK: '1'
+#      PERSISTENT: '1'
   scheduler:
     restart: always
     build: ./scheduler
     privileged: true
-  wifi-connect:
-    build: ./wifi-connect
-    network_mode: host
-    privileged: true
-    labels:
-      io.balena.features.dbus: '1'
-      io.balena.features.firmware: '1'
+
   lighttpd:
     build: ./lighttpd
     restart: always

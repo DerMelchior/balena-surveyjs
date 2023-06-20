@@ -1,3 +1,15 @@
 FROM bh.cr/balenalabs/browser-%%BALENA_ARCH%%/2.4.5
 
-RUN install_packages cec-utils
+RUN install_packages cec-utils wget 
+
+#RUN wget -c https://download.anydesk.com/linux/anydesk_6.2.1-1_amd64.deb
+
+#RUN dpkg -i anydesk_6.2.1-1_amd64.deb 
+
+RUN wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
+
+RUN echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list 
+
+RUN apt update
+
+RUN install_packages anydesk

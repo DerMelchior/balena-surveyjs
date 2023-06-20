@@ -9,21 +9,52 @@ html, body {
 .hidden {
   display:none;
 }
+.bs-red, .text-danger {
+  color: #dc3545;
+  font-color:#dc3545;
+}
 
+.text-small {
+  font-size: large;
+  font-weight: normal;
+  font-style: light;
+  line-height: 0.45;
+  font-family: OpenSans;
+}
+.text-bold {
+  font-size: xx-large;
+  font-weight: bold;
+  font-style: bold;
+  line-height: 0.75;
+  font-family: roboto;
+}
+div.logo {
+  max-height: 80px;
+  height: 60px;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+img.logo {
+  max-height: 80px;
+  height: 60px;
+}
+header {
+  margin-bottom:30px;
+}
 /* startpage related stuff */
-#carouselId > div.carousel-inner > div.carousel-item > img.img-fluid {
-   max-height: 590px;
+#carouselId > div.carousel-inner > div.carousel-item > img {
+   max-height: 490px;
    width: auto;
 }
 #carouselId > div.carousel-inner > div.carousel-item > .carousel-caption {
     bottom: 10rem;
   }
-#carouselId > div.carousel-inner > div.carousel-item > .carousel-caption > a.btn-lg {
+#carouselId > div.carousel-inner > div.carousel-item > .carousel-caption > a.btn-xxl {
    padding: 0.75rem 1rem;
    font-size: 2.0rem;
    border-radius: 0.5rem;
    background-blend-mode: overlay;
-   opacity: 70%;
+   opacity: 80%;
 
 }
 
@@ -34,7 +65,7 @@ html, body {
 }
 #sv-nav-next > div > input {
    color: #dc3545;
-   border: 2px solid #dc3545;
+   border: 1px solid #dc3545;
 }
 
  
@@ -67,38 +98,33 @@ html, body {
 @media only screen and (min-device-width: 720px) and (max-device-width: 1280px) {
   /* insert styles here */
   .active:active {
-    outline-color: red !important; 
+    outline-color: #dc3545 !important; 
     outline-style: solid;
-    outline-width: 2px;
+    outline-width: 1px;
   }
   .focus:focus {
-    outline-color: red !important; 
+    outline-color: #dc3545 !important; 
     outline-style: solid;
-    outline-width: 2px;
+    outline-width: 1px;
   }
   .focus:focus, .active:active {
-    outline-color: red !important; 
+    outline-color: #dc3545 !important; 
     outline-style: solid;
-    outline-width: 2px;
+    outline-width: 1px;
   }
   
   .btn:active {
-      border: solid 2px red;
+      border: 1px solid #dc3545;
     }  
   .btn:focus {
-      border: solid 2px red;
+      border: 1px solid #dc3545;
     }  
     .btn:active, .btn:focus {
-      border: solid 2px red;
+      border: 1px solid #dc3545;
     }
 
   
-  .modal:nth-of-type(even) {
-      z-index: 1062 !important;
-  }
-  .modal-backdrop.show:nth-of-type(even) {
-      z-index: 1061 !important;
-  }
+ 
   
  
 }
@@ -130,12 +156,12 @@ html, body {
 @media only screen and (min-device-width: 1536px) and (max-device-width: 2048px) {
   /* insert styles here */
 
-  #carouselId > div.carousel-inner > div.carousel-item > img.img-fluid {
-     max-height: 640px;
+  #carouselId > div.carousel-inner > div.carousel-item > img {
+     max-height: 570px;
      width: auto;
   }
-  .carousel-caption {
-    bottom: 20rem;
+  #carouselId > div.carousel-inner > div.carousel-item > .carousel-caption {
+    bottom: 15rem;
   }
 }
 
@@ -168,51 +194,24 @@ html, body {
 @media  screen and (max-device-width: 1920px) and (min-device-width: 1920px) {
   /* insert styles here */
 
-#carouselId > div > div.carousel-item > img.img-fluid {
-   max-height: 610px;
-   width: auto;
-}
-#carouselId > div > div.carousel-item > .carousel-caption {
+  #carouselId > div.carousel-inner > div.carousel-item > img {
+     max-height: 640px;
+     width: auto;
+  }
+  #carouselId > div.carousel-inner > div.carousel-item > .carousel-caption {
     bottom: 20rem;
   }
-   /* knockoutjs modifikations here */
-
+ 
+/* knockoutjs modifikations here */
 
 .sd-imagepicker__image:active {
-  border: solid 2px #ea0000;
-  border-color: #ea0000;
+  border: solid 1px #dc3545;
+  border-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
-  background-color: #ea0000;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-}
-.sd-btn sd-navigation__next-btn {
-  border: solid 2px #ea0000;
-  border-color: #ea0000;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-  background-color: #ea0000;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-}
-
-.sd-imagepicker__image:focus {
-  border: solid 2px #ea0000;
-  border-color: #ea0000;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-  background-color: #ea0000;
+  background-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
@@ -220,13 +219,13 @@ html, body {
 }
 
 .sd-imagepicker__image:active, .sd-imagepicker__image:focus {
-  border: solid 2px ca0000;
-  border-color: #ea0000;
+  border: 1 px solid #dc3545;
+  border-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
-  background-color: #ea0000;
+  background-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
@@ -234,7 +233,7 @@ html, body {
   /* ---------------------------- background-color: --------------------------- */
 }
 .sd-imagepicker__image-container {
-  border: 1px solid darkgrey;
+  border: 1px solid #dc3545;
   border-radius: 5px;
 }
 
@@ -245,7 +244,8 @@ html, body {
 
 }
 
-.sd-imagepicker__item img, .sd-imagepicker__item .sd-imagepicker__image-container>div {
+.sd-imagepicker__item img, 
+.sd-imagepicker__item .sd-imagepicker__image-container > div {
   background-color: unset;
 }
 
@@ -264,26 +264,26 @@ html, body {
  /* knockoutjs modifikations here */
 
 .sd-imagepicker__image:active {
-  border: solid 2px #ea0000;
-  border-color: #ea0000;
+  border: 1px solid #dc3545;
+  border-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
-  background-color: #ea0000;
+  background-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
 }
 .sd-btn sd-navigation__next-btn {
-  border: solid 2px #ea0000;
-  border-color: #ea0000;
+  border: 1px solid #dc3545;
+  border-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
-  background-color: #ea0000;
+  background-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
@@ -291,27 +291,28 @@ html, body {
 }
 
 .sd-imagepicker__image:focus {
-  border: solid 2px #ea0000;
-  border-color: #ea0000;
+  border: 1px solid #dc3545;
+  border-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
-  background-color: #ea0000;
+  background-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
 }
 
-.sd-imagepicker__image:active, .sd-imagepicker__image:focus {
-  border: solid 2px ca0000;
-  border-color: #ea0000;
+.sd-imagepicker__image:active, 
+.sd-imagepicker__image:focus {
+  border: 1px solid #dc3545;
+  border-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
-  background-color: #ea0000;
+  background-color: #dc3545;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
@@ -322,8 +323,8 @@ html, body {
   padding-bottom: 50px
 }
 .sd-imagepicker__image-container {
-  border: 1px solid darkgrey;
-  border-radius: 3px;
+  border: 1px solid #dc3545;
+  border-radius: 5px;
 }
 
 .sd-imagepicker__text {
@@ -340,17 +341,16 @@ html, body {
   /*TODO red O to background */
 
 }
+
 .sd-imagepicker__item img, .sd-imagepicker__item .sd-imagepicker__image-container>div {
-  border: 2px solid #dc3545;
-  border-radius: 3px;
+  border: 1px solid #dc3545;
+  border-radius: 5px;
   object-fit: cover !important;
   opacity: .5;
-
 }
 
-.sd-imagepicker__item:focus-within .sd-imagepicker__image, .sd-imagepicker__item--allowhover .sd-imagepicker__image:hover {
+.sd-imagepicker__item:focus-within .sd-imagepicker__image, 
+.sd-imagepicker__item--allowhover .sd-imagepicker__image:hover {
   opacity: 1.0;
 }
-.sd-imagepicker__item img:hover {
-  
-}
+
