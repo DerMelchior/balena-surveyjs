@@ -13,6 +13,13 @@ html, body {
   color: #dc3545;
 }
 
+#logoID {
+  background-image: url('./images/kammer_flimmern_1000x200.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
 #headerTextID {
   font-size: 0.6rem;
   /* text-align: right; */
@@ -25,11 +32,11 @@ html, body {
   font-family:  monospace;
 }
 .text-bold {
-  font-size: xx-large;
-  font-weight: bold;
+  /* font-size: xx-large; */
+  /* font-weight: bold; */
   font-style: bold;
-  line-height: 0.75rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* line-height: 0.75rem; */
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
 div.logo {
   max-height: 80px;
@@ -49,17 +56,17 @@ hr.bs-red {
   color:#dc3545;
   height: 3px;
   width:95%;
-  margin-left:40px;
+  margin-left: 30px;
 }
 /* startpage related stuff */
-#carouselId > div.carousel-inner > div.carousel-item > img {
+#carouselId > div.carousel-inner > div.carousel-item img {
    max-height: 490px;
    width: auto;
 }
-#carouselId > div.carousel-inner > div.carousel-item > .carousel-caption {
+#carouselId > div.carousel-inner > div.carousel-item .carousel-caption {
     bottom: 10rem;
   }
-#carouselId > div.carousel-inner > div.carousel-item > .carousel-caption > a.btn-xxl {
+#carouselId > div.carousel-inner > div.carousel-item .carousel-caption a.btn-xxl {
    padding: 0.75rem 1rem;
    font-size: 2.0rem;
    border-radius: 0.5rem;
@@ -190,13 +197,13 @@ hr.bs-red {
 }
 
 /* (1920x1080) Full HD Display */
-@media  screen and (max-device-width: 1920px) and (min-device-width: 1920px) {
+@media  screen and (min-device-width: 1918px) and (max-device-width: 1922px) {
   /* insert styles here */
-  #carouselId > div.carousel-inner > div.carousel-item > img {
+  #carouselId > div.carousel-inner > div.carousel-item img {
     max-height: 570px;
     width: auto;
  }
- #carouselId > div.carousel-inner > div.carousel-item > .carousel-caption {
+ #carouselId > div.carousel-inner > div.carousel-item .carousel-caption {
    bottom: 15rem;
  }
 
@@ -232,11 +239,11 @@ hr.bs-red {
     max-height: 100px;
     height: 80px;
   }
-  #carouselId > div.carousel-inner > div.carousel-item > img {
+  #carouselId > div.carousel-inner > div.carousel-item img {
      max-height: 640px;
      width: auto;
   }
-  #carouselId > div.carousel-inner > div.carousel-item > .carousel-caption {
+  #carouselId > div.carousel-inner > div.carousel-item .carousel-caption {
     bottom: 20rem;
   }
  
