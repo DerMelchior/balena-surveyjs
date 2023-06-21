@@ -3,6 +3,7 @@ volumes:
   settings:
   browser-data:
   pulse:                          # Required for PA over UNIX socket
+  tailscale-state:
 
 services:
 #  audio:
@@ -63,7 +64,22 @@ services:
     restart: always
     build: ./scheduler
     privileged: true
-
+  tailscale:
+    # privileged may be optional, but requires manual step in that case
+    # https://github.com/tailscale/tailscale/issues/504
+    privileged: true 
+    build:
+      context: ./tailscale-balena-rpi/tailscale
+      dockerfile: Dockerfile.template
+    cap_add:
+      - NET_ADMIN
+    network_mode: host
+    volumes:
+      - tailscale-state:/tailscale
+    labels:
+      io.balena.features.kernel-modules: '1'
+    environment:
+      TAILSCALE_KEY: ''
   lighttpd:
     build: ./lighttpd
     restart: always
