@@ -91,25 +91,6 @@ hr.bs-red {
   /* insert styles here */
 }
 
-/* (320x480) Smartphone, Portrait */
-@media only screen and (device-width: 320px) and (orientation: portrait) {
-  /* insert styles here */
-}
-
-/* (320x480) Smartphone, Landscape */
-@media only screen and (device-width: 480px) and (orientation: landscape) {
-  /* insert styles here */
-}
-
-/* (480x800) Android */
-@media only screen and (min-device-width: 480px) and (max-device-width: 800px) {
-  /* insert styles here */
-}
-
-/* (640x960) iPhone 4 & 4S */
-@media only screen and (min-device-width: 640px) and (max-device-width: 960px) {
-  /* insert styles here */
-}
 
 /* (720x1280) Galaxy Nexus, WXGA */
 @media only screen and (min-device-width: 720px) and (max-device-width: 1280px) {
@@ -141,10 +122,7 @@ hr.bs-red {
     }
 }
 
-/* (720x1280) Galaxy Nexus, Landscape */
-@media only screen and (min-device-width: 720px) and (max-device-width: 1280px) and (orientation: landscape) {
-  /* insert styles here */
-}
+
 
 /* (1024x768) iPad 1 & 2, XGA */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -152,11 +130,6 @@ hr.bs-red {
 
 }
 
-/* (768x1024) iPad 1 & 2, Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  /* insert styles here */
-
-}
 
 /* (1024x768) iPad 1 & 2, Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
@@ -164,40 +137,10 @@ hr.bs-red {
 
 }
 
-/* (2048x1536) iPad 3 */
-@media only screen and (min-device-width: 1536px) and (max-device-width: 2048px) {
-  /* insert styles here */
 
-  
-}
-
-/* (1280x720) Galaxy Note 2, WXGA */
-@media only screen and (min-device-width: 720px) and (max-device-width: 1280px) {
-  /* insert styles here */
-}
-
-/* (1366x768) WXGA Display */
-@media  screen and (max-width: 1366px) {
-  /* insert styles here */
-}
-
-/* (1280x1024) SXGA Display */
-@media  screen and (max-width: 1280px) {
-  /* insert styles here */
-}
-
-/* (1440x900) WXGA+ Display */
-@media  screen and (max-width: 1440px) {
-  /* insert styles here */
-}
-
-/* (1680x1050) WSXGA+ Display */
-@media  screen and (max-width: 1680px) {
-  /* insert styles here */
-}
 
 /* (1920x1080) Full HD Display */
-@media  screen and (min-device-width: 1918px) and (max-device-width: 1922px) {
+@media  screen and (min-device-width: 1080px) and (max-device-width: 1920px) {
   /* insert styles here */
   #carouselId > div.carousel-inner > div.carousel-item img {
     max-height: 570px;
@@ -249,40 +192,13 @@ hr.bs-red {
  
 /* knockoutjs modifikations here */
 
-.sd-imagepicker__image:active {
-  border: solid 1px #dc3545;
-  border-color: #dc3545;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-  background-color: #dc3545;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-}
 
-.sd-imagepicker__image:active, .sd-imagepicker__image:focus {
-  border: 1 px solid #dc3545;
-  border-color: #dc3545;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-  background-color: #dc3545;
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-  /* ---------------------------- background-color: --------------------------- */
-}
+ /* ---------------------------- background-color: --------------------------- */
+
 .sd-imagepicker__image-container {
   border: 1px solid #dc3545;
   border-radius: 5px;
 }
-
-
 .sd-element--with-frame > .sd-element > .sd-question > .sd-row__question {
   /* background-image: none; */
   /*TODO red O to background */
@@ -296,13 +212,6 @@ hr.bs-red {
 
 
 
-
-}
-
-/* (1600x900) HD+ Display */
-@media  screen and (max-width: 1600px) {
-  /* insert styles here */
-}
 
 
 
@@ -399,3 +308,4 @@ hr.bs-red {
   opacity: 1.0;
 }
 
+}

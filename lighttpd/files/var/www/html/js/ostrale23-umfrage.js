@@ -2,21 +2,21 @@ const survey = new Survey.Model(json);
 survey.onComplete.add((sender, options) => {
     console.log("DATA: "+JSON.stringify(sender.data, null, 3));
 });
+survey.onStarted.add(() => {
+    survey.showNavigationButtons = false;
+});
+
 survey.supportedLocales = ["en", "de"];
-
-/*survey.locale = "de";*/
-
 survey.defaultLocale = "en";
+
 /*
+survey.locale = "de";
 survey.currentLocale = "en";
 */
-/*
-ko.applyBindings({
-    model: survey
-}, document.getElementById("surveyElement_de"));
-*/
+
+
  
 /*
-$("#surveyElement_de").PopupSurvey({ model: survey_de, isExpanded: true });
+$("#surveyElement").PopupSurvey({ model: survey, isExpanded: true });
 */
-$("#surveyElement").Survey({ model: survey}, {locale: "de" });
+$("#surveyElement").Survey({ model: survey, locale: "de" });
