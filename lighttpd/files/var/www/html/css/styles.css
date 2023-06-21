@@ -25,14 +25,13 @@ html, body {
   /* text-align: right; */
 }
 .text-small {
-  font-size: large;
+  font-size: small;
   font-weight: normal;
   font-style: light;
   line-height: 0.45em;
-  font-family:  monospace;
 }
 .text-bold {
-  /* font-size: xx-large; */
+   font-size: xx-large; 
   /* font-weight: bold; */
   font-style: bold;
   /* line-height: 0.75rem; */
@@ -156,18 +155,15 @@ hr.bs-red {
     /* text-align: right; */
   }
   .text-small {
-    font-size: xx-small;
+    font-size: smaller;
     font-weight: normal;
-    font-style: normal;
   /*  line-height: 0.65em; */
-    font-family:  monospace;
   }
   .text-bold {
     font-size: xxx-large;
     font-weight: bold;
-    font-style: bold;
    /* line-height: 0.9em;*/
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
   }
   div.logo {
     padding-left: 10px;
@@ -194,29 +190,22 @@ hr.bs-red {
 
 
  /* ---------------------------- background-color: --------------------------- */
-
+/*
 .sd-imagepicker__image-container {
   border: 1px solid #dc3545;
   border-radius: 5px;
 }
+*/
 .sd-element--with-frame > .sd-element > .sd-question > .sd-row__question {
   /* background-image: none; */
   /*TODO red O to background */
 
 }
 
-.sd-imagepicker__item img, 
-.sd-imagepicker__item .sd-imagepicker__image-container > div {
-  background-color: unset;
-}
-
-
-
-
-
 
  /* knockoutjs modifikations here */
 
+/*
 .sd-imagepicker__image:active {
   border: 1px solid #dc3545;
   border-color: #dc3545;
@@ -271,7 +260,6 @@ hr.bs-red {
   -moz-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
-  /* ---------------------------- background-color: --------------------------- */
 }
 .sd-imagepicker__image {
   padding-bottom: 50px
@@ -280,15 +268,7 @@ hr.bs-red {
   border: 1px solid #dc3545;
   border-radius: 5px;
 }
-
-.sd-imagepicker__text {
-  position: absolute;
-  margin-top: 65% !important;
-}
-
-.sd-row__question {
-  white-space: normal !important;
-}
+*/
 
 .sd-element--with-frame > .sd-element > .sd-question > .sd-row__question {
   /* background-image: none; */
@@ -296,7 +276,9 @@ hr.bs-red {
 
 }
 
-.sd-imagepicker__item img, .sd-imagepicker__item .sd-imagepicker__image-container>div {
+/*
+.sd-imagepicker__item img, 
+.sd-imagepicker__item .sd-imagepicker__image-container>div {
   border: 1px solid #dc3545;
   border-radius: 5px;
   object-fit: cover !important;
@@ -307,5 +289,5 @@ hr.bs-red {
 .sd-imagepicker__item--allowhover .sd-imagepicker__image:hover {
   opacity: 1.0;
 }
-
+*/
 }
