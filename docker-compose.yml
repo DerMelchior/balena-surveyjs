@@ -42,7 +42,7 @@ services:
       REMOTE_DEBUG_PORT: '35173'
       WINDOW_SIZE: '1920,1080'
       ENABLE_GPU: '1'
-      KIOSK: '0'
+      KIOSK: '1'
       PERSISTENT: '1'
     depends_on: 
       - lighttpd
@@ -67,7 +67,8 @@ services:
   tailscale:
     # privileged may be optional, but requires manual step in that case
     # https://github.com/tailscale/tailscale/issues/504
-    privileged: true 
+    privileged: true
+    restart: no
     build:
       context: ./tailscale-balena-rpi/tailscale
       dockerfile: Dockerfile.template
@@ -79,7 +80,8 @@ services:
     labels:
       io.balena.features.kernel-modules: '1'
     environment:
-      TAILSCALE_KEY: ''
+      TAILSCALE_KEY: 'tskey-auth-kUVgjT1CNTRL-jbGQSXAd2YgVfG8Ddc2uZg867QkkGLsJ'
+      TAILSCALE_API_KEY: 'tskey-api-kTH9iE5CNTRL-cvv2DoyUsZ7J2pGCnBPrc7pAy9MXo5T53'
   lighttpd:
     build: ./lighttpd
     restart: always

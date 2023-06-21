@@ -1,10 +1,17 @@
 /* private stylesheet definitions */
 
-html, body { 
-  height: 100%; 
-  margin: 0; 
-  padding: 0; 
-  overflow: hidden; 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+/*
+  background-blend-mode: overlay;
+  background-image: url("./images/robotron-kantine_893px.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: normal;
+*/
 }
 .hidden {
   display:none;
@@ -17,12 +24,11 @@ html, body {
   background-image: url('./images/kammer_flimmern_1000x200.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center;
 }
 
 #headerTextID {
-  font-size: 0.6rem;
-  /* text-align: right; */
+
 }
 .text-small {
   font-size: small;
@@ -40,9 +46,7 @@ html, body {
 div.logo {
   max-height: 80px;
   height: 60px;
-  padding-left: 30px;
-  /* padding-right: 30px; */
-  padding-top: 30px;
+  padding-left: 10px;
 }
 img.logo {
   max-height: 80px;
@@ -70,7 +74,7 @@ hr.bs-red {
    font-size: 2.0rem;
    border-radius: 0.5rem;
    background-blend-mode: overlay;
-   opacity: 80%;
+   opacity: 70%;
 
 }
 
@@ -142,16 +146,16 @@ hr.bs-red {
 @media  screen and (min-device-width: 1080px) and (max-device-width: 1920px) {
   /* insert styles here */
   #carouselId > div.carousel-inner > div.carousel-item img {
-    max-height: 570px;
-    width: auto;
+    max-height: auto;
+   
  }
  #carouselId > div.carousel-inner > div.carousel-item .carousel-caption {
-   bottom: 15rem;
+   bottom: 10rem;
  }
 
 
   #headerTextID {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     /* text-align: right; */
   }
   .text-small {
@@ -183,7 +187,7 @@ hr.bs-red {
      width: auto;
   }
   #carouselId > div.carousel-inner > div.carousel-item .carousel-caption {
-    bottom: 20rem;
+
   }
  
 /* knockoutjs modifikations here */
