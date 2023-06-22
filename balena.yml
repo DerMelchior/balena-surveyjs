@@ -53,7 +53,8 @@ data:
     - WINDOW_SIZE: '192,1080'
     - API_PORT: '5012'
     - REMOTE_DEBUG_PORT: '35173'
-    - LOCAL_HTTP_DELAY: 0
+    - LOCAL_HTTP_DELAY: '0'
+    - ZT_NETWORK: '17d709436ccce440'
   defaultDeviceType: raspberrypi3-64
   supportedDeviceTypes:
     - raspberrypi4-64
@@ -63,4 +64,4 @@ data:
     - intel-nuc
     - genericx86-64-ext
     - raspberrypi400-64
-version: 2.0.8
+version: 2.0.10-stable

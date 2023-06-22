@@ -51,14 +51,14 @@
     </div>
 </div>
 </header>
-<hr class="bs-red bg-danger" style="height:4px;color:#red;background-color:#red;">
+<hr class="bs-red bg-danger" style="height:4px;color:#ff0000;background-color:#ff0000;">
 <main>
 <div class="container-xl">
     <div class="row">
     <div class="jumbotron-xl justify-content-center" style="margin: 0 auto; ">
-          <div id="carouselId" class="carousel carousel-fade slide" data-bs-ride="carousel" data-interval="10000" data-bs-interval="10000">
+          <div id="carouselId" class="carousel carousel-fade slide" data-bs-ride="carousel">
             <div class="carousel-inner text-center" role="listbox">
-                <div class="carousel-item active">
+                <div class="carousel-item active" data-bs-interval="5000">
                     <div class="row justify-content-around">
                     <div class="col-sm-6 start">
 			<br />
@@ -71,7 +71,7 @@
 			<br />
 			<br />
 			<br />
-                        <h2 class="display-3 text-center">Beteilige Dich an der <span class="bs-red text-bold text-danger">O</span>23 Umfrage!</h2>
+                        <h2 class="display-3 text-center">Beteilige Dich an der <span class="bs-red text-bold text-danger" style="font-size: 67px;">O</span>23 Umfrage!</h2>
                         <br/>
                         <div class="carousel-caption bottom">
                             <a class="btn btn-danger btn-xxl text-white ripple" href="./umfrage.html" role="button">Starte Umfrage</a>
@@ -79,14 +79,14 @@
                     </div>
                 </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="7000">
                     <div class="row justify-content-around">
                     <div class="col-sm-6 start">
 			<br />
 			<br />
 			<br />
 			<br />
-                        <h2 class="display-3 text-center">Take part in the survey about the biennial <span class="bs-red text-bold text-danger">O</span>23!</h2>
+                        <h2 class="display-3 text-center">Take part in the survey about the biennial <span class="bs-red text-bold text-danger" style="font-size: 47px;">O</span>23!</h2>
 			<br />
 			<br />
                         <div class="carousel-caption bottom">
@@ -101,7 +101,7 @@
                     </div>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="7000">
                     <div class="row justify-content-around">
                     <div class="col-sm-6 start">
 			<br />
@@ -123,7 +123,7 @@
                     </div>
                 </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="5000">
                     <div class="row justify-content-around">
                     <div class="col-6 left">
 			<br />
@@ -145,15 +145,17 @@
                     </div>
                     </div>
                 </div>
-           </div>
-	<button class="carousel-control-prev danger bs-red" type="button" data-bs-target="#carouselId" data-bs-slide="prev" style="color:#ff0000;min-height:33px;">
-    <span class="carousel-control-prev-icon bs-red danger" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next danger bs-red" type="button" data-bs-target="#carouselId" data-bs-slide="next" style="color:#ff0000;min-height:33px;">
-    <span class="carousel-control-next-icon danger bs-red" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+</div>
+<div class="carousel-control">
+	<a class="carousel-control-prev danger bs-red" role="button" href="#carouselId" data-bs-target="#carouselId" data-bs-slide="prev">
+    	  <span class="carousel-control-prev-icon bs-red danger" aria-hidden="true"></span>
+    	  <span class="visually-hidden">Previous</span>
+  	</a>
+  	<a class="carousel-control-next danger bs-red" role="button" href="#carouselId" data-bs-target="#carouselId" data-bs-slide="next" >
+    	  <span class="carousel-control-next-icon danger bs-red" aria-hidden="true"></span>
+    	  <span class="visually-hidden">Next</span>
+  	</a>
+                   </div>
         </div>
     </div>
 </div>
@@ -161,7 +163,11 @@
 </main>
 <footer class="py-5 bg-light hidden">
    <div class="container-xl">
-      <p class="m-0 text-center text-white">© Ostrale 2023 | All Rights Reserved</p>
+	<div class="row justify-content-end">
+	  <div class="col end">
+	      <p class="m-0 text-right text-red">© Ostrale 2023 | All Rights Reserved | Version: 2.0.9 - by fehlercode42</p>
+	  </div>
+	</div>
    </div>
 </footer>
 </body>

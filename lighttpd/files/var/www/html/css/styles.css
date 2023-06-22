@@ -20,6 +20,15 @@ html, body {
   color: #dc3545;
 }
 
+.carousel-control span.glyphicon { color: #dc3545; }
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-image: none;
+  color: #dc3545;
+  font-size: 40px;
+}
+
 #logoID {
   background-image: url('./images/kammer_flimmern_1000x200.png');
   background-size: contain;
@@ -37,11 +46,11 @@ html, body {
   line-height: 0.45em;
 }
 .text-bold {
-   font-size: xx-large; 
-  /* font-weight: bold; */
-  font-style: bold;
-  /* line-height: 0.75rem; */
-  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+   font-size: xx-large;
+   font-weight: bold;
+   font-style: bold;
+   line-height: 0.75rem;
+   /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
 div.logo {
   max-height: 80px;
@@ -166,8 +175,7 @@ hr.bs-red {
   .text-bold {
     font-size: xxx-large;
     font-weight: bold;
-   /* line-height: 0.9em;*/
-   
+    line-height: 0.9em;
   }
   div.logo {
     padding-left: 10px;
