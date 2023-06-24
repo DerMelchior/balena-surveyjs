@@ -41,28 +41,26 @@
         </p>
         <p class="small"><span id="headerTextID" style="font-size:0.8rem;padding-left: 9.5em;" class="font-monospace">14. Internationale Ausstellung zeitgenössischer Künste</span>
        	</p>
-         </div>
+        </div>
             <div class="col-xl-4 logo bg-image" id="logoID" style="background-image: url('./images/kammer_flimmern_1000x200.png');background-size: contain;background-repeat: no-repeat;background-position: right;">
-            </div>
+        </div>
     </div>
 </div>
 </header>
 <hr class="bs-red bg-danger" style="height:4px;color:#red;background-color:#red;"><main>
   <div class="container-xl">
   <div class="row">
-  <div class="jumbotron-xl justify-content-center text-center">
+  <div class="jumbotron-xl justify-content-center">
      <div id="surveyElement" style="display: inline-flex;">
          <survey params="survey: model"></survey>
-         <survey params="locale: en"></survey>
+         <survey params="survey.defaultLocale: en"></survey>
+         <survey params="survey.locale: de"></survey>
      </div>
   </div>
      </div>
   </div>   
   <script src="./js/ostrale023-umfrage_json.js"></script>
   <script src="./js/ostrale23-umfrage.js"></script>
-  <script>
-    survey.locale = 'de';
-  </script>
 </main>
 <footer class="py-5 bg-light hidden">
    <div class="container">

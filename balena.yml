@@ -1,20 +1,8 @@
 name: balenaSurvey
 description: >-
-  Raspberry Pi-powered digital signage website viewer with surveyjs survey
+  Raspberry Pi-powered digital signage website viewer with surveyjs survey for ostrale biennal o23
 type: sw.application
 post-provisioning: >-
-  At the most basic level, this project allows you to display
-  any webpage using a lightweight web browser. This means that you can build a
-  device dedicated to showing anything that runs in a normal web browser. It
-  will boot up and automatically and display your content.
-
-
-  Some examples of what you could use this for include:
-
-  * Data-centric dashboards using [Grafana](https://grafana.com/), [Datadog](https://www.datadoghq.com/) or [Humio](https://www.humio.com/)
-
-  * Display for services such as [Flightradar24](https://www.flightradar24.com/) or [Flightaware](https://flightaware.com/)
-
   * Digital [fishtank](https://webglsamples.org/aquarium/aquarium.html) or [jellyfish](https://akirodic.com/p/jellyfish/)
 
   * Streaming webcam display
@@ -23,10 +11,7 @@ post-provisioning: >-
 
   * 24 hour live [animated cat](http://www.nyan.cat/) display
 
-  * [Home automation](https://www.home-assistant.io) dashboard
-
-
-  **Deploy from balenaHub or head to the [Github repo](https://github.com/balena-labs-projects/balena-dash) to learn more!**
+    **Deploy from balenaHub or head to the [Github repo](https://github.com/dermelchior/balena-surveyjs) to learn more!**
 assets:
   repository:
     type: blob.asset
@@ -35,26 +20,28 @@ assets:
   logo:
     type: blob.asset
     data:
-      url: 'file://assets/logo_ostrale.pngostrale.de/android-icon.png'
+      url: 'file://assets/logo_ostrale.png'
 data:
   applicationConfigVariables:
-    - BALENA_HOST_CONFIG_gpu_mem: '396'
+    - BALENA_HOST_CONFIG_gpu_mem: '392'
     - BALENA_HOST_CONFIG_dtoverlay: 'vc4-kms-v3d'
   applicationEnvironmentVariables:
-    - SHOW_CURSOR: '1'
+    - SHOW_CURSOR: '0'
     - CONTROL_TV: '1'
     - ENABLE_GPU: '1'
     - KIOSK: '1'
     - PERSISTENT: '1'
     - ACTIVITY_TIMEOUT: 6000
-    - LAUNCH_URL: 'http://localhost'
+    - LAUNCH_URL: 'https://localhost'
     - ROTATE_DISPLAY: normal
     - WINDOW_POSITION: '0,0'
-    - WINDOW_SIZE: '192,1080'
+    - WINDOW_SIZE: '1920,1080'
     - API_PORT: '5012'
     - REMOTE_DEBUG_PORT: '35173'
     - LOCAL_HTTP_DELAY: '0'
     - ZT_NETWORK: '17d709436ccce440'
+    - TAILSCALE_AUTHKEY: ''
+    - TAILSCALE_APIKEY: ''
   defaultDeviceType: raspberrypi3-64
   supportedDeviceTypes:
     - raspberrypi4-64
