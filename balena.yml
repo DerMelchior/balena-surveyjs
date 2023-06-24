@@ -35,7 +35,7 @@ assets:
   logo:
     type: blob.asset
     data:
-      url: 'https://ostrale.de/android-icon.png'
+      url: 'file://assets/logo_ostrale.pngostrale.de/android-icon.png'
 data:
   applicationConfigVariables:
     - BALENA_HOST_CONFIG_gpu_mem: '396'
@@ -44,7 +44,7 @@ data:
     - SHOW_CURSOR: '1'
     - CONTROL_TV: '1'
     - ENABLE_GPU: '1'
-    - KIOSK: '0'
+    - KIOSK: '1'
     - PERSISTENT: '1'
     - ACTIVITY_TIMEOUT: 6000
     - LAUNCH_URL: 'http://localhost'

@@ -12,10 +12,26 @@ html, body {
   background-position: center;
   background-blend-mode: normal;
 */
+/* surveyjs theme variables
+
+--primary: #eb2b1e;
+--background: #555555;
+--background-dim: #4d4d4d;
+--background-dim-light: #4d4d4d;
+--primary-foreground: #e6e6e6;
+--foreground: #ededed;
+--base-unit: 8px;
+*/
+
 }
+
+
+
+
 .hidden {
   display:none;
 }
+
 .bs-red, .text-danger {
   color: #dc3545;
 }
