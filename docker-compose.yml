@@ -1,73 +1,82 @@
 version: '2'
 volumes:
   settings:
-  browser-data:
-  pulse:                          # Required for PA over UNIX socket
-  volume_zerotier:
+  browser-settings:
+  audio:                          # Required for PA over UNIX socket
+  zerotier-data:
+  tailscale-data:
 
 services:
-#  audio:
-#    image: balenaplayground/balenalabs-audio:intel-nuc
-#    privileged: true
-#    environment:
-#      AUDIO_OUTPUT: RPI_HEADPHONES
-#    labels:
-#      - 'io.balena.features.dbus=1'
-#      - 'io.balena.features.firmware=1'
-#      - 'io.balena.features.kernel-modules=1'
-#      - 'io.balena.features.procfs=1'
-#      - 'io.balena.features.sysfs=1'
-#    volumes:
-#      - 'pulse:/run/pulse'
-#    ports:
-#      - 4317:4317
+  audio:
+    image: balenaplayground/balenalabs-audio
+    privileged: true
+    environment:
+      AUDIO_OUTPUT: RPI_HEADPHONES
+    labels:
+      io.balena.features.dbus: '1'
+      io.balena.features.firmware: '1'
+#     io.balena.features.kernel-modules: '1'
+#     io.balena.features.procfs: '1'
+#     io.balena.features.sysfs: '1'
+    volumes:
+      - 'audio:/run/pulse'
+    ports:
+      - 4317:4317
+    environment:
+      DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
   balenalabs-browser:
     build: ./balenalabs-browser
     privileged: true
     network_mode: host
     restart: always
     labels:
-      - 'io.balena.features.dbus=1'
-      - 'io.balena.features.firmware=1'
+      io.balena.features.dbus: '1'
+      io.balena.features.firmware: '1'
+      io.balena.features.kernel-modules=: '1'
     ports:
       - 5012:5012
       - 35173:35173
     volumes:
-      - 'browser-data:/data'
+      - 'browser-settings:/data'
     environment:
       LAUNCH_URL: 'https://localhost'
       LOCAL_HTTP_DELAY: '10'
       API_PORT: '5012'
-      SHOW_CURSOR: '1'
+      SHOW_CURSOR: '0'
       REMOTE_DEBUG_PORT: '35173'
       WINDOW_SIZE: '1920,1080'
       ENABLE_GPU: '1'
       KIOSK: '1'
       PERSISTENT: '1'
-    depends_on: 
+      DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
+    depends_on:
       - lighttpd
   scheduler:
     restart: always
     build: ./scheduler
     privileged: true
-#  tailscale:
+  tailscale:
 #    # privileged may be optional, but requires manual step in that case
 #    # https://github.com/tailscale/tailscale/issues/504
-#    privileged: true
-#    restart: no
-#    build:
-#     context: ./tailscale-balena-rpi/tailscale
-#      dockerfile: Dockerfile.template
-#    cap_add:
-#      - NET_ADMIN
-#    network_mode: host
-#    volumes:
-#      - tailscale-state:/tailscale
-#    labels:
-#      io.balena.features.kernel-modules: '1'
-#    environment:
-#      TAILSCALE_KEY: 'tskey-auth-kUVgjT1CNTRL-jbGQSXAd2YgVfG8Ddc2uZg867QkkGLsJ'
-#      TAILSCALE_API_KEY: 'tskey-api-kTH9iE5CNTRL-cvv2DoyUsZ7J2pGCnBPrc7pAy9MXo5T53'
+    privileged: true
+    restart: no
+    build:
+     context: ./tailscale
+      dockerfile: Dockerfile.template
+    cap_add:
+      - SYS_ADMIN
+      - NET_ADMIN
+    network_mode: host
+    volumes:
+      - tailscale-data:/tailscale
+    labels:
+      io.balena.features.kernel-modules: '1'
+      io.balena.features.dbus: '1'
+      io.balena.features.firmware: '1'
+    environment:
+      TAILSCALE_KEY: ''
+      TAILSCALE_API_KEY: ''
+      DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
   lighttpd:
     build: ./lighttpd
     restart: always
@@ -75,10 +84,12 @@ services:
     ports:
       - 80:80
       - 443:443
+    depends_on:
+      - tailscale  
   zerotier:
     # This volume is needed to make ZT configuration survive a reboot and new container version
     volumes:
-      - volume_zerotier:/var/lib/zerotier-one
+      - zerotier-data:/var/lib/zerotier-one
     build:
       context: ./balena-zerotier
     # privileged is needed for ZeroTier to avoid "cannot bind to local control interface port" error
@@ -94,5 +105,6 @@ services:
     # Source : https://github.com/balena-io/wifi-connect
     labels:
       io.balena.features.dbus: '1'
+      io.balena.features.kernel-modules: '1'
     environment:
-      DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
+      DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'

@@ -1,7 +1,7 @@
 version: '2'
 volumes:
   settings:
-  pulse:                          # Required for PA over UNIX socket
+#  pulse:                          # Required for PA over UNIX socket
   weston:
 services:
   audio:
