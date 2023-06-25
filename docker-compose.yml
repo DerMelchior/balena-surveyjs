@@ -8,7 +8,7 @@ volumes:
 
 services:
   audio:
-    image: balenaplayground/balenalabs-audio:x86_64-ext
+    image: balenaplayground/balenalabs-audio:intel-nuc
     privileged: true
     labels:
       io.balena.features.dbus: '1'

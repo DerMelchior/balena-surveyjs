@@ -14,43 +14,67 @@ RUN apt-get update && \
     git \
     libelf-dev \
     libssl-dev \
+    wireguard \
+    kmod \
+    tailscale \
     wget
 
 WORKDIR /usr/src/app
 
 # Clones the kernel builder repository
-RUN git clone https://github.com/balena-os/kernel-module-build.git .
+#RUN git clone https://github.com/balena-os/kernel-module-build .
+
+# Clones the helper tools
+#RUN git clone https://git.zx2c4.com/wireguard-linux-compat && \
+#RUN  git clone https://git.zx2c4.com/wireguard-tools
+
+#RUN git clone https://github.com/balena-os/linux.git linux_src 
+# Clones the balenaos kernel-header
+#RUN git clone https://github.com/balena-os/module-headers && \
+#RUN mkdir -p kernel_module_headers 
+#RUN mkdir -p %%BALENA_MACHINE_NAME%%-obj
+
+#RUN module-headers/gen_mod_headers kernel_module_headers linux_src %%BALENA_MACHINE_NAME%%-obj  arm arm-linux-gnueabihf-
+
+
+#
+
 
 # You can switch to a specific commit of the kernel builder if you want to ensure consistent builds
 # git reset --hard f889851c5d00890b51b27c63eaa59a976063265a
 
 # Copy your kernel source from your local build context to the build directory
-COPY example_module .
+#COPY kernel_module_headers .
 
 # Set the name of the directory where you have copied your kernel source in the step above
-ENV MOD_DIR "example_module"
+#ENV MOD_DIR "kernel_module_headers"
 
 # Set the balena OS version you intend to use
-ENV OS_VERSION '2.99.27'
+ENV OS_VERSION %%BALENA_OS_VERSION%%
 
 # Start the build
-RUN BALENA_MACHINE_NAME=%%BALENA_MACHINE_NAME%% ./build.sh build --device %%BALENA_MACHINE_NAME%% --os-version "$OS_VERSION" --src "$MOD_DIR"
+#RUN BALENA_MACHINE_NAME=%%BALENA_MACHINE_NAME%% ./build.sh build --device %%BALENA_MACHINE_NAME%% --os-version "$OS_VERSION" --src "$MOD_DIR"
 
 
-FROM alpine
+FROM alpine:run
+
+RUN install_packages curl build-essential libelf-dev libssl-dev pkg-config git flex bison bc python kmod wireguard iptables 
+
+RUN curl -fsSL https://tailscale.com/install.sh | sh
+
 
 # Set the directory where you would like your kernel source
-ARG MOD_PATH=/etc/output
-ENV MOD_DIR example_module
+#ARG MOD_PATH=/etc/output
+#ENV MOD_DIR example_module
 
 # Required for access when the container starts
-ENV MOD_PATH="$MOD_PATH"
+#ENV MOD_PATH="$MOD_PATH"
 
 # Copy the built kernel module into your app
-COPY --from=kernel-build /usr/src/app/output/ "$MOD_PATH"
+#COPY --from=kernel-build /usr/src/app/output/ "$MOD_PATH"
 
 # Copy the startup script for loading the modules
-COPY --from=kernel-build /usr/src/app/run.sh /usr/src/app/run.sh
+COPY run.sh /usr/src/app/run.sh
 
 # Start the script that loads the modules.
 ENTRYPOINT ["sh", "/usr/src/app/run.sh"]
