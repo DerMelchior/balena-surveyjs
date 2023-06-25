@@ -9,7 +9,11 @@ volumes:
 
 services:
   audio:
-    image: balenaplayground/balenalabs-audio:intel-nuc
+#   image: balenaplayground/balenalabs-audio:intel-nuc
+#   image: balenaplayground/balenalabs-audio:raspberrypi3-64
+    build:
+      context: ./audio
+      dockerfile: Dockerfile.template
     privileged: true
     labels:
       io.balena.features.dbus: '1'
