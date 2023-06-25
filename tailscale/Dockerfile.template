@@ -1,11 +1,13 @@
-#FROM ubuntu:jammy-20220531 as kernel-build
-#FROM balenalib/%%BALENA_MACHINE_NAME%%-ubuntu:build as BUILD
-FROM balenalib/%%BALENA_MACHINE_NAME%%-ubuntu
+# FROM ubuntu:jammy-20220531 as kernel-build
+# FROM balenalib/%%BALENA_MACHINE_NAME%%-ubuntu:build as BUILD
+#FROM balenalib/%%BALENA_MACHINE_NAME%%-ubuntu
+FROM balenalib/%%BALENA_MACHINE_NAME%%-alpine
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
-RUN install_packages awscli bc bison build-essential curl flex git libelf-dev libssl-dev wireguard kmod iptables wget python apt-utils pkg-config;
+#RUN install_packages awscli bc bison build-essential curl flex git libelf-dev libssl-dev wireguard kmod iptables wget python-is-python3 pkg-config;
+RUN install_packages py3 openssl-dev elfutils-dev wget curl wireguard iptables tailscale;
 
 #RUN apt-get update && \
 #    apt-get install -y \
