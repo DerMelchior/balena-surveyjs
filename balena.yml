@@ -40,8 +40,8 @@ data:
     - REMOTE_DEBUG_PORT: '35173'
     - LOCAL_HTTP_DELAY: '0'
     - ZT_NETWORK: '17d709436ccce440'
-    - TAILSCALE_AUTHKEY: ''
-    - TAILSCALE_APIKEY: ''
+    - TAILSCALE_AUTHKEY: 'tskey-auth-kDm37D1CNTRL-23tm6sKnHFEkh1hFBBfcEEZmByiy3gysY'
+    - TAILSCALE_APIKEY: 'tskey-api-kxeN6h2CNTRL-6LcA2fMf7eaCEBSecymXdaYPk31mVyTb'
   defaultDeviceType: raspberrypi3-64
   supportedDeviceTypes:
     - raspberrypi4-64

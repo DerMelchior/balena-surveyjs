@@ -8,10 +8,8 @@ volumes:
 
 services:
   audio:
-    image: balenaplayground/balenalabs-audio
+    image: balenaplayground/balenalabs-audio:x86_64-ext
     privileged: true
-    environment:
-      AUDIO_OUTPUT: RPI_HEADPHONES
     labels:
       io.balena.features.dbus: '1'
       io.balena.features.firmware: '1'
@@ -23,6 +21,7 @@ services:
     ports:
       - 4317:4317
     environment:
+      AUDIO_OUTPUT: 'RPI_HEADPHONES'
       DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
   balenalabs-browser:
     build: ./balenalabs-browser
@@ -32,7 +31,7 @@ services:
     labels:
       io.balena.features.dbus: '1'
       io.balena.features.firmware: '1'
-      io.balena.features.kernel-modules=: '1'
+      io.balena.features.kernel-modules: '1'
     ports:
       - 5012:5012
       - 35173:35173
@@ -62,7 +61,7 @@ services:
     restart: no
     build:
      context: ./tailscale
-      dockerfile: Dockerfile.template
+     dockerfile: Dockerfile.template
     cap_add:
       - SYS_ADMIN
       - NET_ADMIN
@@ -74,8 +73,8 @@ services:
       io.balena.features.dbus: '1'
       io.balena.features.firmware: '1'
     environment:
-      TAILSCALE_KEY: ''
-      TAILSCALE_API_KEY: ''
+      TAILSCALE_AUTHKEY: 'tskey-auth-kDm37D1CNTRL-23tm6sKnHFEkh1hFBBfcEEZmByiy3gysY'
+      TAILSCALE_APIKEY: 'tskey-api-kxeN6h2CNTRL-6LcA2fMf7eaCEBSecymXdaYPk31mVyTb'
       DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
   lighttpd:
     build: ./lighttpd
@@ -84,8 +83,8 @@ services:
     ports:
       - 80:80
       - 443:443
-    depends_on:
-      - tailscale  
+#   depends_on:
+#     - tailscale  
   zerotier:
     # This volume is needed to make ZT configuration survive a reboot and new container version
     volumes:
