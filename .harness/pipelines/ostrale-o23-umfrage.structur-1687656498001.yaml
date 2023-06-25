@@ -1,0 +1,34 @@
+pipeline:
+  identifier: Build_ostrale_o23_umfrage.structur_1687656531897
+  name: Build ostrale-o23-umfrage.structur
+  orgIdentifier: default
+  projectIdentifier: default_project
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github
+        repoName: DerMelchior/ostrale-o23-umfrage.structur
+        build: <+input>
+        sslVerify: true
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: echo
+                  spec:
+                    command: echo hello world
+                  timeout: ""
+                  type: Run
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+        type: CI
