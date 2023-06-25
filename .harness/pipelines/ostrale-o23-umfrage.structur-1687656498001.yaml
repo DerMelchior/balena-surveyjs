@@ -6,9 +6,10 @@ pipeline:
   properties:
     ci:
       codebase:
-        build: <+input>
         connectorRef: account.Github
         repoName: DerMelchior/ostrale-o23-umfrage.structur
+        build: <+input>
+        sslVerify: true
   stages:
     - stage:
         identifier: build
@@ -25,9 +26,9 @@ pipeline:
                   timeout: ""
                   type: Run
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
