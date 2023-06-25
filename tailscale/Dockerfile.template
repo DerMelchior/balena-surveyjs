@@ -7,7 +7,7 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-alpine
 ENV TZ=Etc/UTC
 RUN apk update
 #RUN install_packages awscli bc bison build-essential curl flex git libelf-dev libssl-dev wireguard kmod iptables wget python-is-python3 pkg-config;
-RUN install_packages python3 openssl elfutils-dev curl wireguard-tools-wg iptables tailscale;
+RUN install_packages python3 openssl elfutils-dev curl wireguard-tools-wg openrc iptables tailscale;
 
 #RUN apt-get update && \
 #    apt-get install -y \
