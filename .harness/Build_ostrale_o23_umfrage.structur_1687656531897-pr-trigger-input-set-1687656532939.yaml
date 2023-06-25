@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_ostrale_o23_umfrage.structur_1687656531897-pr-trigger-input-set
+  identifier: Build_ostrale_o23_umfragestructur_1687656531897prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_ostrale_o23_umfrage.structur_1687656531897
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
