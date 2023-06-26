@@ -1,5 +1,5 @@
 ARG WEB_ROOT="/var/www/public_html"
-ARG WEB_REPOSITORY="https://github.com/DerMelchior/ostrale-o23-umfrage.ui.git"
+ARG WEB_REPOSITORY="https://github.com/DerMelchior/ostrale-o23-umfrage.ui"
 FROM balenalib/%%BALENA_MACHINE_NAME%%-alpine
 
 LABEL org.opencontainers.image.title="Lighttpd"
@@ -15,17 +15,18 @@ RUN set -x \
     lighttpd-mod_auth${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
     lighttpd-mod_webdav${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
     && rm -rvf /var/cache/apk/* \
-    && rm -rvf /etc/lighttpd/* /etc/logrotate.d/lighttpd /var/log/lighttpd /var/www/localhost \
+    && rm -rvf /etc/lighttpd/* /etc/logrotate.d/lighttpd /var/log/lighttpd /var/www/localhost/public_html/* /var/www/localhost/* /var/www/public_html/* \
     && rm -rvf /var/www/html/js/* /var/www/html/css/* /var/www/html/images/* /var/www/html/* \
-    && mkdir -p ${WEB_ROOT} \
+    && mkdir -p /var/www/public_html \
     && mkdir -p /var/www/localhost \
-    && mkdir -p /var/www/localhost/public_html
-
+    && mkdir -p /var/www/localhost/public_html \
+    && mkdir -p /var/www/html
 
 COPY files/lighttpd /etc/lighttpd/
 COPY files/var /var/
-RUN git clone ${WEB_REPOSITORY} /var/www/public_html
-RUN ln -sf /var/www/html/ostrale-o23-umfrage.ui/html5/ /var/www/html
+# /**TODO */
+#RUN git clone ${WEB_REPOSITORY} /var/www/public_html
+#RUN ln -sf /var/www/html/ostrale-o23-umfrage.ui/html5/ /var/www/html
 
 EXPOSE 80/tcp
 
