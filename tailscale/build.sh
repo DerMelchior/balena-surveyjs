@@ -37,7 +37,7 @@ if [ -z "${TAILSCALE_HOSTNAME}" ]; then
 fi
 
 if [ -z "${TAILSCALE_TAGS}" ]; then
-    export TAILSCALE_TAGS="tag:docker,tag:balena"
+    export TAILSCALE_TAGS="tag:docker,tag:balena,tag:server"
 fi
 
 tailscaled -state=/tailscale/tailscaled.state &
