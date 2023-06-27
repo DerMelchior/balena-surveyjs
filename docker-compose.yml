@@ -26,7 +26,7 @@ services:
     ports:
       - 4317:4317
     environment:
-      AUDIO_OUTPUT: 'RPI_HEADPHONES'
+#     AUDIO_OUTPUT: 'RPI_HEADPHONES'
       DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
   balenalabs-browser:
     build: ./balenalabs-browser
@@ -43,7 +43,8 @@ services:
     volumes:
       - 'browser-settings:/data'
     environment:
-      LAUNCH_URL: 'https://localhost'
+#      LAUNCH_URL: 'https://localhost'
+      LAUNCH_URL: 'https://akirodic.com/p/jellyfish/'
       LOCAL_HTTP_DELAY: '10'
       API_PORT: '5012'
       SHOW_CURSOR: '0'
