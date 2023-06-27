@@ -11,23 +11,25 @@ ARG LIGHTTPD_VERSION=1.4.67-r0
 
 RUN set -x \
     && apk add --no-cache \
+    git \
     lighttpd${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
-    lighttpd-mod_auth${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
-    lighttpd-mod_webdav${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
+#   lighttpd-mod_auth${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
+#   lighttpd-mod_webdav${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
     && rm -rvf /var/cache/apk/* \
     && rm -rvf /etc/lighttpd/* /etc/logrotate.d/lighttpd /var/log/lighttpd /var/www/localhost/public_html/* /var/www/localhost/* /var/www/public_html/* \
     && rm -rvf /var/www/html/js/* /var/www/html/css/* /var/www/html/images/* /var/www/html/* \
     && mkdir -p /var/www/public_html \
     && mkdir -p /var/www/localhost \
-    && mkdir -p /var/www/localhost/public_html \
-    && mkdir -p /var/www/html
+    && mkdir -p /var/www/localhost/public_html 
+#   && mkdir -p /var/www/html
 
 COPY files/lighttpd /etc/lighttpd/
 COPY files/var /var/
+
 # /**TODO */
-RUN git clone ${WEB_REPOSITORY}
-COPY ostrale-o23-umfrage.ui/html5 /var/www/html/
-#RUN ln -sf /var/www/html/ostrale-o23-umfrage.ui/html5/ /var/www/html
+RUN git clone https://github.com/DerMelchior/ostrale-o23-umfrage.ui.git /var/www/ostrale-o23-umfrage.ui \
+    && ln -sf /var/www/ostrale-o23-umfrage.ui/html5/ /var/www/html
+
 
 EXPOSE 80/tcp
 

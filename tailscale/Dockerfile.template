@@ -37,13 +37,11 @@ COPY workaround.sh /usr/src/app/workaround.sh
 COPY run.sh /usr/src/app/run.sh
 
 RUN cd /usr/src/app/
-#RUN wget https://tailscale.com/install.sh
 RUN curl -fsSL https://tailscale.com/install.sh
-#COPY install.sh /usr/src/app/install.sh
 RUN chmod u+x /usr/src/app/*.sh
 
 
-ENTRYPOINT ["sh", "tailscale up"]
+ENTRYPOINT ["sh", "/usr/src/app/init.sh"]
 # Run your usual service with CMD
 CMD exec /bin/sh -c "trap : TERM INT; sleep 9999999999d & wait"
 

@@ -4,11 +4,6 @@
 
 set -me
 
-if lsmod | grep wireguard >/dev/null 2>&1
-then
-    echo -n "wireguard version: "
-    cat /sys/module/wireguard/version
-else
     echo "modprobe udp_tunnel..."
     modprobe udp_tunnel
 
@@ -25,7 +20,7 @@ else
     then
         dmesg | grep wireguard
     fi
-fi
+
 
 if [ -z "${TAILSCALE_AUTHKEY}" ]; then
     echo "Missing TAILSCALE_AUTHKEY env variable."

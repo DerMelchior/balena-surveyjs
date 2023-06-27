@@ -5,29 +5,29 @@ volumes:
   audio:                          # Required for PA over UNIX socket
   zerotier-data:
   tailscale-data:
-  lighttpd-data:
+  www-data:
 
 services:
-  audio:
-    image: balenaplayground/balenalabs-audio:intel-nuc
-#   image: balenaplayground/balenalabs-audio:raspberrypi3-64
+#  audio:
+#    image: balenaplayground/balenalabs-audio:intel-nuc
+#    image: balenaplayground/balenalabs-audio:raspberrypi3-64
 #    build:
 #      context: ./audio
 #      dockerfile: Dockerfile.template
-    privileged: true
-    labels:
-      io.balena.features.dbus: '1'
-      io.balena.features.firmware: '1'
-      io.balena.features.kernel-modules: '1'
-#     io.balena.features.procfs: '1'
-#     io.balena.features.sysfs: '1'
-    volumes:
-      - 'audio:/run/pulse'
-    ports:
-      - 4317:4317
-    environment:
+#    privileged: true
+#    labels:
+#      io.balena.features.dbus: '1'
+#      io.balena.features.firmware: '1'
+#      io.balena.features.kernel-modules: '1'
+##     io.balena.features.procfs: '1'
+##     io.balena.features.sysfs: '1'
+#    volumes:
+#      - 'audio:/run/pulse'
+#    ports:
+#      - 4317:4317
+#    environment:
 #     AUDIO_OUTPUT: 'RPI_HEADPHONES'
-      DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
+#      DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
   balenalabs-browser:
     build: ./balenalabs-browser
     privileged: true
@@ -43,7 +43,7 @@ services:
     volumes:
       - 'browser-settings:/data'
     environment:
-#      LAUNCH_URL: 'https://localhost'
+#     LAUNCH_URL: 'http://localhost'
       LAUNCH_URL: 'https://akirodic.com/p/jellyfish/'
       LOCAL_HTTP_DELAY: '10'
       API_PORT: '5012'
@@ -64,7 +64,7 @@ services:
 #    # privileged may be optional, but requires manual step in that case
 #    # https://github.com/tailscale/tailscale/issues/504
     privileged: true
-    restart: no
+    restart: always
     build:
      context: ./tailscale
      dockerfile: Dockerfile.template
@@ -80,6 +80,7 @@ services:
       io.balena.features.firmware: '1'
     environment:
       TAILSCALE_AUTHKEY: 'tskey-auth-kDm37D1CNTRL-23tm6sKnHFEkh1hFBBfcEEZmByiy3gysY'
+      TAILSCALE_KEY: 'tskey-auth-kDm37D1CNTRL-23tm6sKnHFEkh1hFBBfcEEZmByiy3gysY'
       TAILSCALE_APIKEY: 'tskey-api-kxeN6h2CNTRL-6LcA2fMf7eaCEBSecymXdaYPk31mVyTb'
       DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
   lighttpd:
@@ -91,8 +92,8 @@ services:
     ports:
       - 80:80
       - 443:443
-#    volumes:
-#      - 'lighttpd-data:/var'
+    volumes:
+      - 'www-data:/var/www'
     depends_on:
       - tailscale  
   zerotier:
