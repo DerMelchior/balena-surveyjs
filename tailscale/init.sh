@@ -10,17 +10,11 @@ set -me
     echo "modprobe ip6_udp_tunnel..."
     modprobe ip6_udp_tunnel
 
-    modpath="/wireguard/wireguard.ko"
-
     echo "modinfo wireguard..."
     modinfo "${modpath}"
 
-    echo "insmod wireguard..."
-    if ! insmod "${modpath}"
-    then
-        dmesg | grep wireguard
-    fi
-
+    echo "modprobe wireguard..."
+    modprobe wireguard
 
 if [ -z "${TAILSCALE_AUTHKEY}" ]; then
     echo "Missing TAILSCALE_AUTHKEY env variable."
