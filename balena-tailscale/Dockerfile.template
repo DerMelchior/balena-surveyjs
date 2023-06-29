@@ -37,7 +37,7 @@ COPY workaround.sh /usr/src/app/workaround.sh
 COPY run.sh /usr/src/app/run.sh
 
 RUN cd /usr/src/app/
-RUN curl -fsSL https://tailscale.com/install.sh
+#RUN curl -fsSL https://tailscale.com/install.sh
 RUN chmod u+x /usr/src/app/*.sh
 
 

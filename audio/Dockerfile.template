@@ -1,2 +1,0 @@
-FROM balenaplayground/balenalabs-audio:%%BALENA_MACHINE_NAME%%
-

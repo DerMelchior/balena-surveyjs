@@ -2,7 +2,7 @@ version: '2'
 volumes:
   settings:
   browser-settings:
-  audio:                          # Required for PA over UNIX socket
+  audio-data:                          # Required for PA over UNIX socket
   zerotier-data:
   tailscale-data:
   www-data:
@@ -22,7 +22,10 @@ services:
 ##     io.balena.features.procfs: '1'
 ##     io.balena.features.sysfs: '1'
     volumes:
-      - 'audio:/run/pulse'
+      - 'audio-data:/run/pulse'
+    cap_add:
+      - SYS_ADMIN
+      - NET_ADMIN
     ports:
       - 4317:4317
     environment:
@@ -64,24 +67,29 @@ services:
 #    # privileged may be optional, but requires manual step in that case
 #    # https://github.com/tailscale/tailscale/issues/504
     privileged: true
-    restart: always
+    restart: on-failure
     build:
-     context: ./tailscale
-     dockerfile: Dockerfile.template
+     context: ./balena-tailscale
+     dockerfile: Dockerfile
     cap_add:
-      - SYS_ADMIN
+      - SYS_MODULE
       - NET_ADMIN
+      - NET_RAW
     network_mode: host
     volumes:
-      - 'tailscale-data:/tailscale'
+      - tailscale-data:/var/lib/tailscale
     labels:
-      io.balena.features.kernel-modules: '1'
-      io.balena.features.dbus: '1'
-      io.balena.features.firmware: '1'
+      - io.balena.features.kernel-modules=1
+      - io.balena.features.dbus=1
+      - io.balena.features.firmware=1
+    tmpfs:
+      - /tmp
+      - /var/run/
     environment:
       TAILSCALE_AUTHKEY: 'tskey-auth-kDm37D1CNTRL-23tm6sKnHFEkh1hFBBfcEEZmByiy3gysY'
-      TAILSCALE_KEY: 'tskey-auth-kDm37D1CNTRL-23tm6sKnHFEkh1hFBBfcEEZmByiy3gysY'
-      TAILSCALE_APIKEY: 'tskey-api-kxeN6h2CNTRL-6LcA2fMf7eaCEBSecymXdaYPk31mVyTb'
+      TS_AUTH_KEY: 'tskey-auth-kDm37D1CNTRL-23tm6sKnHFEkh1hFBBfcEEZmByiy3gysY'
+      TS_ACCEPT_DNS: true
+#      TS_EXTRA_ARGS: '-advertise-tags tag:docker'
       DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
   lighttpd:
     build: 
