@@ -14,6 +14,7 @@ ARG LIGHTTPD_VERSION=1.4.67-r0
 RUN set -x \
     && apk add --no-cache \
     git \
+    nano \
     tzdata \
     lighttpd${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
     lighttpd-mod_auth${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
@@ -30,13 +31,10 @@ RUN set -x \
 #RUN git config --global init.defaultBranch main
 RUN cd /var/www \
     && git clone https://github.com/DerMelchior/ostrale-o23-umfrage.ui.git /var/www/ostrale-o23-umfrage.ui
-RUN cd /var/www/ostrale-o23-umfrage.ui && git branch -m main 
-
-#    && git --work-tree=/var/www/ostrale-023-umfrage.ui --git-dir=/var/www/www.git remote add -t main origin https://github.com/DerMelchior/ostrale-o23-umfrage.ui.git \
-#    && git --work-tree=/var/www/ostrale-023-umfrage.ui --git-dir=/var/www/www.git pull
-
-#RUN git --work-tree=/var/www/ostrale-023-umfrage.ui --git-dir=/var/www/www.git remote add -t main origin https://github.com/DerMelchior/ostrale-o23-umfrage.ui.git \
-RUN cd /var/www/ostrale-o23-umfrage.ui && chmod -R 750 html5
+RUN cd /var/www/ostrale-o23-umfrage.ui && git branch -m main \
+    chmod -R 750 html5
+RUN git config --global user.name "DerMelchior" && \
+    git config --global user.email "thilo.haupt@gmail.com"
 
 #COPY files/post-receive /var/www/www.git/hooks/post-receive
 #COPY files/git_checkout.sh /var/www/www.git/hooks/git_checkout.sh
