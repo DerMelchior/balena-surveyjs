@@ -16,7 +16,7 @@ RUN set -x \
     git \
     tzdata \
     lighttpd${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
-    lighttpd-mod_auth${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
+#   lighttpd-mod_auth${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
 #   lighttpd-mod_webdav${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
     && rm -rvf /var/cache/apk/* \
     && rm -rvf /etc/lighttpd/* /etc/logrotate.d/lighttpd /var/log/lighttpd /var/www/localhost/public_html/* /var/www/localhost/* /var/www/public_html/* \
@@ -27,7 +27,7 @@ RUN set -x \
     && mkdir -p /var/www/html \
     && mkdir -p /var/www/www.git 
 
-RUN git config --global init.defaultBranch main
+#RUN git config --global init.defaultBranch main
 RUN cd /var/www \
     && git clone https://github.com/DerMelchior/ostrale-o23-umfrage.ui.git /var/www/ostrale-o23-umfrage.ui
 RUN cd /var/www/ostrale-o23-umfrage.ui && git branch -m main 
@@ -45,7 +45,7 @@ RUN cd /var/www/ostrale-o23-umfrage.ui && chmod -R 0664 *
 #RUN chmod +x /var/www/www.git/hooks/git_checkout.sh
 #RUN chmod +x /var/www/www.git/hooks/start.sh
 COPY files/lighttpd /etc/lighttpd/
-COPY files/var /var/
+#COPY files/var /var/
 
 #RUN /var/www/www.git/hooks/git_checkout.sh
 
