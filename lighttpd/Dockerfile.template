@@ -16,11 +16,11 @@ RUN set -x \
     git \
     tzdata \
     lighttpd${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
-#   lighttpd-mod_auth${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
+    lighttpd-mod_auth${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
 #   lighttpd-mod_webdav${LIGHTTPD_VERSION:+=}${LIGHTTPD_VERSION} \
     && rm -rvf /var/cache/apk/* \
     && rm -rvf /etc/lighttpd/* /etc/logrotate.d/lighttpd /var/log/lighttpd /var/www/localhost/public_html/* /var/www/localhost/* /var/www/public_html/* \
-    && rm -rvf /var/www/html/js/* /var/www/html/css/* /var/www/html/images/* /var/www/html/* /var/www/ostrale-o23-umfrage.ui/html5/* \
+    && rm -rvf /var/www/html/js/* /var/www/html/css/* /var/www/html/images/* /var/www/html/* /var/www/ostrale-o23-umfrage.ui/* \
     && mkdir -p /var/www/public_html \
 #    && mkdir -p /var/www/ostrale-o23-umfrage.ui \
     && mkdir -p /var/www/localhost/public_html \
