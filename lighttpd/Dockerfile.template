@@ -36,7 +36,7 @@ RUN cd /var/www/ostrale-o23-umfrage.ui && git branch -m main
 #    && git --work-tree=/var/www/ostrale-023-umfrage.ui --git-dir=/var/www/www.git pull
 
 #RUN git --work-tree=/var/www/ostrale-023-umfrage.ui --git-dir=/var/www/www.git remote add -t main origin https://github.com/DerMelchior/ostrale-o23-umfrage.ui.git \
-RUN cd /var/www/ostrale-o23-umfrage.ui && chmod -R 0664 *
+RUN cd /var/www/ostrale-o23-umfrage.ui && chmod -R 750 html5
 
 #COPY files/post-receive /var/www/www.git/hooks/post-receive
 #COPY files/git_checkout.sh /var/www/www.git/hooks/git_checkout.sh

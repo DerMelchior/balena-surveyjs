@@ -102,8 +102,8 @@ services:
       - 443:443
     volumes:
       - 'www-data:/var/www'
-    depends_on:
-      - tailscale  
+#   depends_on:
+#     - tailscale  
   zerotier:
     # This volume is needed to make ZT configuration survive a reboot and new container version
     volumes:
